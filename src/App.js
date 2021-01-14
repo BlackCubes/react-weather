@@ -5,7 +5,18 @@ import './App.css';
 import { getCoordinates } from './util';
 
 function App() {
-  getCoordinates('Fresno');
+  const [lat, setLat] = React.useState(false);
+  const [lon, setLon] = React.useState(false);
+
+  React.useEffect(() => {
+    getCoordinates('Fresno').then((data) => {
+      setLat(data.lat);
+      setLon(data.lng);
+    });
+  }, []);
+
+  console.log('lat: ', lat);
+  console.log('lon: ', lon);
   return (
     <div className="App">
       <header className="App-header">
