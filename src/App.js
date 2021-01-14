@@ -2,7 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { getCoordinates } from './util';
+
 function App() {
+  getCoordinates('Fresno');
   return (
     <div className="App">
       <header className="App-header">
