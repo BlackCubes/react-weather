@@ -4,7 +4,7 @@ export const getCoordinates = async (location) => {
   try {
     const apiUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAPQUEST_API}&location=${location}`;
     const res = await axios.get(apiUrl);
-    console.log(res);
+    if (res.status === 200) return res.data.results[0].locations[0].latLng;
   } catch (err) {
     console.log(err);
   }
