@@ -4,14 +4,14 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => {
+const WeatherSummary = (props) => {
   return (
-    <React.Fragment>
-      <h1>Day of Week: {dayOfWeek}</h1>
-      <img src={icon} placeholder="An icon" />
-      <p>High Temp: {highTemp}</p>
-      <p>Low Temp: {lowTemp}</p>
-    </React.Fragment>
+    <>
+      <h1>Day of Week: {props.dayOfWeek}</h1>
+      <img src={props.icon} placeholder="An icon" />
+      <p>High Temp: {props.highTemp}</p>
+      <p>Low Temp: {props.lowTemp}</p>
+    </>
   );
 };
 
