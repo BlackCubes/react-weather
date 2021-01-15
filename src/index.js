@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -12,6 +13,13 @@ const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
     <p>{lowTemp}</p>
   </>
 );
+
+WeatherSummary.propTypes = {
+  dayOfWeek: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  highTemp: PropTypes.string.isRequired,
+  lowTemp: PropTypes.string.isRequired,
+};
 
 ReactDOM.render(
   <React.StrictMode>
