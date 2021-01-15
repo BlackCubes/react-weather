@@ -4,12 +4,12 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const WeatherSummary = (props) => (
+const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
   <>
-    <h1>Day of Week: {props.dayOfWeek}</h1>
-    <img src={props.icon} placeholder="An icon" />
-    <p>High Temp: {props.highTemp}</p>
-    <p>Low Temp: {props.lowTemp}</p>
+    <h1>{dayOfWeek}</h1>
+    <img src={`${icon}`} alt="An icon" />
+    <p>{highTemp}</p>
+    <p>{lowTemp}</p>
   </>
 );
 
