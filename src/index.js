@@ -4,16 +4,14 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const WeatherSummary = (props) => {
-  return (
-    <>
-      <h1>Day of Week: {props.dayOfWeek}</h1>
-      <img src={props.icon} placeholder="An icon" />
-      <p>High Temp: {props.highTemp}</p>
-      <p>Low Temp: {props.lowTemp}</p>
-    </>
-  );
-};
+const WeatherSummary = (props) => (
+  <>
+    <h1>Day of Week: {props.dayOfWeek}</h1>
+    <img src={props.icon} placeholder="An icon" />
+    <p>High Temp: {props.highTemp}</p>
+    <p>Low Temp: {props.lowTemp}</p>
+  </>
+);
 
 ReactDOM.render(
   <React.StrictMode>
