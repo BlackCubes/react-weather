@@ -23,28 +23,28 @@ const WeatherDetails = ({
     units === 'metric' ? (temp - 32) / 1.8 : temp;
 
   return (
-    <div className="weather-details">
-      <div className="weather-details__header">
-        <div className="weather-details__header-location">{location}</div>
+    <div className="weather-summary">
+      <div className="weather-summary__header">
+        <div className="weather-summary__header-location">{location}</div>
 
-        <div className="weather-details__header-day">{dayOfWeek}</div>
+        <div className="weather-summary__header-day">{dayOfWeek}</div>
 
-        <div className="weather-details__header-weather">
+        <div className="weather-summary__header-weather">
           {weatherCondition}
         </div>
       </div>
-      <div className="weather-details__condition">
-        <div className="weather-details__condition--primary">
-          <div className="weather-details__condition-icon">
+      <div className="weather-summary__condition">
+        <div className="weather-summary__condition--primary">
+          <div className="weather-summary__condition-icon">
             <FontAwesomeIcon icon={icon} />
           </div>
 
-          <div className="weather-details__condition-temp">
-            <span className="weather-details__condition-temp-value">
+          <div className="weather-summary__condition-temp">
+            <span className="weather-summary__condition-temp-value">
               {tempConversion(currentTemp)}
             </span>
 
-            <div className="weather-details__condition-temp-unit">
+            <div className="weather-summary__condition-temp-unit">
               <span>&deg; F</span>
               &nbsp; | &nbsp;
               <span>&deg; C</span>
@@ -52,24 +52,24 @@ const WeatherDetails = ({
           </div>
         </div>
 
-        <div className="weather-details__condition--secondary">
-          <div className="weather-details__condition-hightemp">
+        <div className="weather-summary__condition--secondary">
+          <div className="weather-summary__condition-hightemp">
             {`High: ${tempConversion(highTemp) + String.fromCharCode(176)}`}
           </div>
 
-          <div className="weather-details__condition-lowtemp">
+          <div className="weather-summary__condition-lowtemp">
             {`Low: ${tempConversion(lowTemp) + String.fromCharCode(176)}`}
           </div>
 
-          <div className="weather-details__condition-precipitation">
+          <div className="weather-summary__condition-precipitation">
             {`Precipitation: ${precipitation + String.fromCharCode(37)}`}
           </div>
 
-          <div className="weather-details__condition-humidity">
+          <div className="weather-summary__condition-humidity">
             {`Humidity: ${humidity + String.fromCharCode(37)}`}
           </div>
 
-          <div className="weather-details__condition-windspeed">
+          <div className="weather-summary__condition-windspeed">
             {`Wind: ${windSpeed} mph`}
           </div>
         </div>
