@@ -46,9 +46,9 @@ const WeatherDetails = ({
               </span>
 
               <div className="weather-summary__condition-temp-unit">
-                <span>&deg; F</span>
+                <span>&deg;F</span>
                 &nbsp; | &nbsp;
-                <span>&deg; C</span>
+                <span>&deg;C</span>
               </div>
             </div>
           </div>
