@@ -10,10 +10,15 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     <WeatherDetails
-      dayOfWeek="Thursday"
-      icon="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"
-      highTemp="50 F"
-      lowTemp="20 F"
+      location="Fresno"
+      dayOfWeek="Sunday"
+      weatherCondition="Light rain"
+      icon="cloud-sun-rain"
+      highTemp={50}
+      lowTemp={20}
+      precipitation={10}
+      humidity={64}
+      windSpeed={6}
     />
   </React.StrictMode>,
   document.getElementById('root')
