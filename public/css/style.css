@@ -1,0 +1,24 @@
+/*
+[1200px - 1800px] the normal style in use (Desktop-First @ Max-Width 1800px)
+
+$breakpoint argument choices:
+
+1em = 16px
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+main {
+  margin-top: 3.7rem; }
+
+body {
+  box-sizing: border-box; }
