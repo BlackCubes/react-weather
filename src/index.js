@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '../public/css/style.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,17 +10,19 @@ import WeatherDetails from './WeatherSummary';
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <WeatherDetails
-      location="Fresno"
-      dayOfWeek="Sunday"
-      weatherCondition="Light rain"
-      icon="cloud-sun-rain"
-      highTemp={50}
-      lowTemp={20}
-      precipitation={10}
-      humidity={64}
-      windSpeed={6}
-    />
+    <main>
+      <WeatherDetails
+        location="Fresno"
+        dayOfWeek="Sunday"
+        weatherCondition="Light rain"
+        icon="cloud-sun-rain"
+        highTemp={50}
+        lowTemp={20}
+        precipitation={10}
+        humidity={64}
+        windSpeed={6}
+      />
+    </main>
   </React.StrictMode>,
   document.getElementById('root')
 );
