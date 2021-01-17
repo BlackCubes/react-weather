@@ -4,12 +4,12 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import WeatherSummary from './WeatherSummary';
+import WeatherDetails from './WeatherSummary';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <WeatherSummary
+    <WeatherDetails
       dayOfWeek="Thursday"
       icon="https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg"
       highTemp="50 F"
