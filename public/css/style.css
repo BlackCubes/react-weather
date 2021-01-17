@@ -22,3 +22,38 @@ main {
 
 body {
   box-sizing: border-box; }
+
+.weather-summary {
+  max-width: 60rem;
+  background-color: #e5e7e9;
+  margin-left: auto;
+  margin-right: auto; }
+  .weather-summary__header {
+    padding: 1rem; }
+    .weather-summary__header-location {
+      font-size: 3rem;
+      font-weight: 600; }
+    .weather-summary__header-day {
+      font-size: 1.6rem; }
+    .weather-summary__header-weather {
+      font-size: 1.6rem; }
+  .weather-summary__condition {
+    display: flex; }
+    .weather-summary__condition--primary {
+      display: flex;
+      width: 75%; }
+    .weather-summary__condition-icon {
+      font-size: 2.5rem;
+      padding: 1rem; }
+    .weather-summary__condition-temp {
+      display: flex;
+      padding: 0.5rem; }
+      .weather-summary__condition-temp-value {
+        font-size: 3rem;
+        font-weight: 600; }
+      .weather-summary__condition-temp-unit {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        margin-left: 0.3rem; }
+    .weather-summary__condition--secondary {
+      font-size: 1.6rem; }
