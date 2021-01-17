@@ -1,0 +1,57 @@
+.weather-summary {
+  max-width: 60rem;
+  background-color: #e5e7e9;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__header {
+    padding: 1rem;
+
+    &-location {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    &-day {
+      font-size: 1.6rem;
+    }
+
+    &-weather {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__condition {
+    display: flex;
+
+    &--primary {
+      display: flex;
+      width: 75%;
+    }
+
+    &-icon {
+      font-size: 2.5rem;
+      padding: 1rem;
+    }
+
+    &-temp {
+      display: flex;
+      padding: 0.5rem;
+
+      &-value {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+
+      &-unit {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        margin-left: 0.3rem;
+      }
+    }
+
+    &--secondary {
+      font-size: 1.6rem;
+    }
+  }
+}
