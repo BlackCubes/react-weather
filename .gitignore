@@ -5,6 +5,9 @@ node_modules/
 .eslintcache
 .cache/# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# css files
+/public/css
+
 # dependencies
 /node_modules
 /.pnp
