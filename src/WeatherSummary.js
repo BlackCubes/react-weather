@@ -58,15 +58,15 @@ const WeatherDetails = ({
           </div>
 
           <div className="weather-details__condition-precipitation">
-            {`Precipitation: ${precipitation}`}
+            {`Precipitation: ${precipitation + String.fromCharCode(37)}`}
           </div>
 
           <div className="weather-details__condition-humidity">
-            {`Humidity: ${humidity}`}
+            {`Humidity: ${humidity + String.fromCharCode(37)}`}
           </div>
 
           <div className="weather-details__condition-windspeed">
-            {`Wind: ${windSpeed}`}
+            {`Wind: ${windSpeed} mph`}
           </div>
         </div>
       </div>
