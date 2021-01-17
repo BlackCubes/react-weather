@@ -1,11 +1,14 @@
 .weather-summary-wrapper {
   max-width: 60rem;
-  background-color: #e5e7e9;
+  background-color: #f2f3f4;
   margin-left: auto;
   margin-right: auto;
+  padding: 1rem;
 }
 
 .weather-summary {
+  background-color: #aeb6bf;
+
   &__header {
     padding: 1rem;
 
