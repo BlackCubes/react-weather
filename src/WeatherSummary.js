@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const WeatherDetails = ({
   location,
@@ -30,11 +31,9 @@ const WeatherDetails = ({
       </div>
       <div className="weather-details__condition">
         <div className="weather-details__condition--primary">
-          <img
-            className="weather-details__condition-icon"
-            src={`${icon}`}
-            alt="An icon"
-          />
+          <div className="weather-details__condition-icon">
+            <FontAwesomeIcon icon={icon} />
+          </div>
 
           <div className="weather-details__condition-temp">
             <span className="weather-details__condition-temp-value">
