@@ -49,7 +49,6 @@ const WeatherDetails = ({
 
             <div className="weather-summary__condition-temp">
               <span className="weather-summary__condition-temp-value heading-secondary">
-                {/* {tempConversion(currentTemp)} */}
                 <Temperature temp={currentTemp} units={units} />
               </span>
 
@@ -63,14 +62,12 @@ const WeatherDetails = ({
 
           <div className="weather-summary__condition--secondary paragraph">
             <div className="weather-summary__condition-hightemp">
-              {/* {`High: ${tempConversion(highTemp) + String.fromCharCode(176)}`} */}
               High:&nbsp;
               <Temperature temp={highTemp} units={units} />
               &deg;
             </div>
 
             <div className="weather-summary__condition-lowtemp">
-              {/* {`Low: ${tempConversion(lowTemp) + String.fromCharCode(176)}`} */}
               Low:&nbsp;
               <Temperature temp={lowTemp} units={units} />
               &deg;
