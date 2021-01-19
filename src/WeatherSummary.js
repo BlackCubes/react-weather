@@ -21,25 +21,29 @@ const WeatherDetails = ({
   humidity,
   windSpeed,
 }) => {
-  const tempConversion = (temp) =>
-    units === 'metric' ? (temp - 32) / 1.8 : temp;
-  console.log(tempConversion);
-
   const handleClick = () => {
     const unitChangeId = document.getElementById('unitChange');
-    const spanElement = unitChangeId.firstElementChild;
+    // const spanElement = unitChangeId.firstElementChild;
     // const degreeType = unitChangeId.firstElementChild.innerText;
     const { parentElement } = unitChangeId;
 
-    Array.from(parentElement.children).forEach((child) => {
-      if (child.nodeName !== 'A') {
-        unitChangeId.firstElementChild.innerText = child.innerText;
-        child.insertAdjacentElement('afterend', unitChangeId);
-        child.remove();
-      } else {
-        child.insertAdjacentElement('afterend', spanElement);
-        child.remove();
-      }
+    const swap = (nodeA, nodeB) => {
+      const parentA = nodeA.parentNode;
+      const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+      nodeB.parentNode.insertBefore(nodeA, nodeB);
+      parentA.insertBefore(nodeB, siblingA);
+    };
+
+    [...parentElement.children].forEach((child) => {
+      if (child.nodeName !== 'A') swap(child, unitChangeId);
+      // if (child.nodeName !== 'A') {
+      //   unitChangeId.firstElementChild.innerText = child.innerText;
+      //   child.insertAdjacentElement('afterend', unitChangeId);
+      //   child.remove();
+      // } else {
+      //   child.insertAdjacentElement('afterend', spanElement);
+      //   child.remove();
+      // }
     });
   };
 
