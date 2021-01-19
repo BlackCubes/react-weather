@@ -35,7 +35,13 @@ const WeatherDetails = ({
     };
 
     [...parentElement.children].forEach((child) => {
-      if (child.nodeName !== 'A') swap(child, unitChangeId);
+      if (child.nodeName !== 'A') {
+        swap(child, unitChangeId);
+        const swappedText = child.textContent;
+        const originalText = unitChangeId.textContent;
+        child.textContent = originalText;
+        unitChangeId.textContent = swappedText;
+      }
       // if (child.nodeName !== 'A') {
       //   unitChangeId.firstElementChild.innerText = child.innerText;
       //   child.insertAdjacentElement('afterend', unitChangeId);
