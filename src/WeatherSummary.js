@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons';
 
+import Temperature from './Temperature';
+
 library.add(faCloudSunRain);
 
 const WeatherDetails = ({
@@ -22,6 +24,7 @@ const WeatherDetails = ({
   const tempConversion = (temp) =>
     units === 'metric' ? (temp - 32) / 1.8 : temp;
 
+  console.log(tempConversion);
   return (
     <div className="weather-summary-wrapper">
       <div className="weather-summary">
@@ -46,7 +49,8 @@ const WeatherDetails = ({
 
             <div className="weather-summary__condition-temp">
               <span className="weather-summary__condition-temp-value heading-secondary">
-                {tempConversion(currentTemp)}
+                {/* {tempConversion(currentTemp)} */}
+                <Temperature temp={currentTemp} units={units} />
               </span>
 
               <div className="weather-summary__condition-temp-unit book-size">
@@ -59,11 +63,17 @@ const WeatherDetails = ({
 
           <div className="weather-summary__condition--secondary paragraph">
             <div className="weather-summary__condition-hightemp">
-              {`High: ${tempConversion(highTemp) + String.fromCharCode(176)}`}
+              {/* {`High: ${tempConversion(highTemp) + String.fromCharCode(176)}`} */}
+              High:&nbsp;
+              <Temperature temp={highTemp} units={units} />
+              &deg;
             </div>
 
             <div className="weather-summary__condition-lowtemp">
-              {`Low: ${tempConversion(lowTemp) + String.fromCharCode(176)}`}
+              {/* {`Low: ${tempConversion(lowTemp) + String.fromCharCode(176)}`} */}
+              Low:&nbsp;
+              <Temperature temp={lowTemp} units={units} />
+              &deg;
             </div>
 
             <div className="weather-summary__condition-precipitation">
