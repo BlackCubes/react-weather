@@ -31,7 +31,7 @@ const WeatherDetails = ({
     // const degreeType = unitChangeId.firstElementChild.innerText;
     const { parentElement } = unitChangeId;
 
-    parentElement.children.forEach((child) => {
+    Array.from(parentElement.children).forEach((child) => {
       if (child.nodeName !== 'A') {
         unitChangeId.firstElementChild.innerText = child.innerText;
         child.insertAdjacentElement('afterend', unitChangeId);
