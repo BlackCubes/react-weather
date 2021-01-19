@@ -6,6 +6,8 @@
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
   box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -18,5 +20,9 @@ main {
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #3498db;
+  background-image: linear-gradient(45deg, #f8c471, #3498db, transparent);
   box-sizing: border-box;
 }
