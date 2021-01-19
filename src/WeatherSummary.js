@@ -23,8 +23,6 @@ const WeatherDetails = ({
 }) => {
   const handleClick = () => {
     const unitChangeId = document.getElementById('unitChange');
-    // const spanElement = unitChangeId.firstElementChild;
-    // const degreeType = unitChangeId.firstElementChild.innerText;
     const { parentElement } = unitChangeId;
 
     const swap = (nodeA, nodeB) => {
@@ -42,14 +40,6 @@ const WeatherDetails = ({
         child.textContent = originalText;
         unitChangeId.textContent = swappedText;
       }
-      // if (child.nodeName !== 'A') {
-      //   unitChangeId.firstElementChild.innerText = child.innerText;
-      //   child.insertAdjacentElement('afterend', unitChangeId);
-      //   child.remove();
-      // } else {
-      //   child.insertAdjacentElement('afterend', spanElement);
-      //   child.remove();
-      // }
     });
   };
 
