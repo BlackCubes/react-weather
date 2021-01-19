@@ -23,8 +23,26 @@ const WeatherDetails = ({
 }) => {
   const tempConversion = (temp) =>
     units === 'metric' ? (temp - 32) / 1.8 : temp;
-
   console.log(tempConversion);
+
+  const handleClick = () => {
+    const unitChangeId = document.getElementById('unitChange');
+    const spanElement = unitChangeId.firstElementChild;
+    // const degreeType = unitChangeId.firstElementChild.innerText;
+    const { parentElement } = unitChangeId;
+
+    parentElement.children.forEach((child) => {
+      if (child.nodeName !== 'A') {
+        unitChangeId.firstElementChild.innerText = child.innerText;
+        child.insertAdjacentElement('afterend', unitChangeId);
+        child.remove();
+      } else {
+        child.insertAdjacentElement('afterend', spanElement);
+        child.remove();
+      }
+    });
+  };
+
   return (
     <div className="weather-summary-wrapper">
       <div className="weather-summary">
@@ -55,7 +73,9 @@ const WeatherDetails = ({
               <div className="weather-summary__condition-temp-unit book-size">
                 <span>&deg;F</span>
                 &nbsp; | &nbsp;
-                <span>&deg;C</span>
+                <button id="unitChange" type="button" onClick={handleClick}>
+                  <span>&deg;C</span>
+                </button>
               </div>
             </div>
           </div>
