@@ -28,9 +28,11 @@ const WeatherDetails = ({
         <div className="weather-summary__header">
           <div className="weather-summary__header-location">{location}</div>
 
-          <div className="weather-summary__header-day">{dayOfWeek}</div>
+          <div className="weather-summary__header-day paragraph">
+            {dayOfWeek}
+          </div>
 
-          <div className="weather-summary__header-weather">
+          <div className="weather-summary__header-weather paragraph">
             {weatherCondition}
           </div>
         </div>
@@ -53,7 +55,7 @@ const WeatherDetails = ({
             </div>
           </div>
 
-          <div className="weather-summary__condition--secondary">
+          <div className="weather-summary__condition--secondary paragraph">
             <div className="weather-summary__condition-hightemp">
               {`High: ${tempConversion(highTemp) + String.fromCharCode(176)}`}
             </div>
