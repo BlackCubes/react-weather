@@ -1,6 +1,7 @@
 body {
   font-family: 'Arimo', sans-serif !important;
   font-weight: 400;
+  color: $color-dark-desaturated-blue-1;
   line-height: 1.5;
 }
 
@@ -8,11 +9,13 @@ body {
   display: block;
   font-size: $font-size-primary;
   font-weight: 400;
+  color: $color-dark-black-blue;
 }
 
 .heading-secondary {
   display: inline-block;
   font-size: $font-size-secondary;
+  color: $color-dark-desaturated-blue-2;
   font-weight: 600;
 }
 
