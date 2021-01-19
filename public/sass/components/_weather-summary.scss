@@ -12,10 +12,10 @@
   &__header {
     padding: 1rem;
 
-    &-location {
-      font-size: 3rem;
-      font-weight: 600;
-    }
+    // &-location {
+    //   font-size: 3rem;
+    //   font-weight: 600;
+    // }
 
     // &-day {
     //   font-size: 1.6rem;
@@ -35,7 +35,7 @@
     }
 
     &-icon {
-      font-size: 2.5rem;
+      // font-size: 2.5rem;
       padding: 1rem;
     }
 
@@ -43,13 +43,13 @@
       display: flex;
       padding: 0.5rem;
 
-      &-value {
-        font-size: 3rem;
-        font-weight: 600;
-      }
+      // &-value {
+      //   font-size: 3rem;
+      //   font-weight: 600;
+      // }
 
       &-unit {
-        font-size: 1.2rem;
+        // font-size: 1.2rem;
         margin-top: 0.5rem;
         margin-left: 0.3rem;
       }

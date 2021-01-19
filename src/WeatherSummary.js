@@ -26,7 +26,9 @@ const WeatherDetails = ({
     <div className="weather-summary-wrapper">
       <div className="weather-summary">
         <div className="weather-summary__header">
-          <div className="weather-summary__header-location">{location}</div>
+          <div className="weather-summary__header-location heading-primary">
+            {location}
+          </div>
 
           <div className="weather-summary__header-day paragraph">
             {dayOfWeek}
@@ -38,16 +40,16 @@ const WeatherDetails = ({
         </div>
         <div className="weather-summary__condition">
           <div className="weather-summary__condition--primary">
-            <div className="weather-summary__condition-icon">
+            <div className="weather-summary__condition-icon heading-secondary">
               <FontAwesomeIcon icon={icon} />
             </div>
 
             <div className="weather-summary__condition-temp">
-              <span className="weather-summary__condition-temp-value">
+              <span className="weather-summary__condition-temp-value heading-secondary">
                 {tempConversion(currentTemp)}
               </span>
 
-              <div className="weather-summary__condition-temp-unit">
+              <div className="weather-summary__condition-temp-unit book-size">
                 <span>&deg;F</span>
                 &nbsp; | &nbsp;
                 <span>&deg;C</span>
