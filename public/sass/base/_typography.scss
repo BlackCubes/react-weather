@@ -4,6 +4,22 @@ body {
   line-height: 1.5;
 }
 
+.heading-primary {
+  display: block;
+  font-size: $font-size-primary;
+  font-weight: 400;
+}
+
+.heading-secondary {
+  display: inline-block;
+  font-size: $font-size-secondary;
+  font-weight: 600;
+}
+
 .paragraph {
   font-size: $default-font-size;
+}
+
+.book-size {
+  font-size: $font-size-book;
 }
