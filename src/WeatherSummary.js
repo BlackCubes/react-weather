@@ -8,6 +8,38 @@ import Temperature from './Temperature';
 
 library.add(faCloudSunRain);
 
+let unitsChange = 'imperial';
+
+function handleClick() {
+  if (unitsChange === 'imperial') unitsChange = 'metric';
+  else unitsChange = 'imperial';
+  const unitChangeId = document.getElementById('unitChange');
+  // const spanElement = unitChangeId.firstElementChild;
+  // const degreeType = unitChangeId.firstElementChild.innerText;
+  const { parentElement } = unitChangeId;
+
+  const swap = (nodeA, nodeB) => {
+    const parentA = nodeA.parentNode;
+    const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+    nodeB.parentNode.insertBefore(nodeA, nodeB);
+    parentA.insertBefore(nodeB, siblingA);
+  };
+
+  [...parentElement.children].forEach((child) => {
+    if (child.nodeName !== 'A') swap(child, unitChangeId);
+    // if (child.nodeName !== 'A') {
+    //   unitChangeId.firstElementChild.innerText = child.innerText;
+    //   child.insertAdjacentElement('afterend', unitChangeId);
+    //   child.remove();
+    // } else {
+    //   child.insertAdjacentElement('afterend', spanElement);
+    //   child.remove();
+    // }
+  });
+}
+
+document.getElementById('unitChange').onclick = handleClick();
+
 const WeatherDetails = ({
   location,
   dayOfWeek,
@@ -21,31 +53,32 @@ const WeatherDetails = ({
   humidity,
   windSpeed,
 }) => {
-  const handleClick = () => {
-    const unitChangeId = document.getElementById('unitChange');
-    // const spanElement = unitChangeId.firstElementChild;
-    // const degreeType = unitChangeId.firstElementChild.innerText;
-    const { parentElement } = unitChangeId;
+  // const handleClick = () => {
+  //   const unitChangeId = document.getElementById('unitChange');
+  //   // const spanElement = unitChangeId.firstElementChild;
+  //   // const degreeType = unitChangeId.firstElementChild.innerText;
+  //   const { parentElement } = unitChangeId;
 
-    const swap = (nodeA, nodeB) => {
-      const parentA = nodeA.parentNode;
-      const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
-      nodeB.parentNode.insertBefore(nodeA, nodeB);
-      parentA.insertBefore(nodeB, siblingA);
-    };
+  //   const swap = (nodeA, nodeB) => {
+  //     const parentA = nodeA.parentNode;
+  //     const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+  //     nodeB.parentNode.insertBefore(nodeA, nodeB);
+  //     parentA.insertBefore(nodeB, siblingA);
+  //   };
 
-    [...parentElement.children].forEach((child) => {
-      if (child.nodeName !== 'A') swap(child, unitChangeId);
-      // if (child.nodeName !== 'A') {
-      //   unitChangeId.firstElementChild.innerText = child.innerText;
-      //   child.insertAdjacentElement('afterend', unitChangeId);
-      //   child.remove();
-      // } else {
-      //   child.insertAdjacentElement('afterend', spanElement);
-      //   child.remove();
-      // }
-    });
-  };
+  //   [...parentElement.children].forEach((child) => {
+  //     if (child.nodeName !== 'A') swap(child, unitChangeId);
+  //     // if (child.nodeName !== 'A') {
+  //     //   unitChangeId.firstElementChild.innerText = child.innerText;
+  //     //   child.insertAdjacentElement('afterend', unitChangeId);
+  //     //   child.remove();
+  //     // } else {
+  //     //   child.insertAdjacentElement('afterend', spanElement);
+  //     //   child.remove();
+  //     // }
+  //   });
+  // };
+  console.log(unitsChange);
 
   return (
     <div className="weather-summary-wrapper">
@@ -71,13 +104,13 @@ const WeatherDetails = ({
 
             <div className="weather-summary__condition-temp">
               <span className="weather-summary__condition-temp-value heading-secondary">
-                <Temperature temp={currentTemp} units={units} />
+                <Temperature temp={currentTemp} units={unitsChange} />
               </span>
 
               <div className="weather-summary__condition-temp-unit book-size">
                 <span>&deg;F</span>
                 &nbsp; | &nbsp;
-                <button id="unitChange" type="button" onClick={handleClick}>
+                <button id="unitChange" type="button">
                   <span>&deg;C</span>
                 </button>
               </div>
@@ -87,7 +120,7 @@ const WeatherDetails = ({
           <div className="weather-summary__condition--secondary paragraph">
             <div className="weather-summary__condition-hightemp">
               High:&nbsp;
-              <Temperature temp={highTemp} units={units} />
+              <Temperature temp={highTemp} units={unitsChange} />
               &deg;
             </div>
 
