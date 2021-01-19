@@ -1,13 +1,23 @@
 .weather-summary-wrapper {
   max-width: 60rem;
-  background-color: #f2f3f4;
+  background-color: $color-light-grayish-blue-1;
+  background-image: linear-gradient(
+    110deg,
+    $color-light-grayish-blue-2,
+    $color-light-grayish-blue-1
+  );
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
 }
 
 .weather-summary {
-  background-color: #aeb6bf;
+  background-color: $color-grayish-blue;
+  background-image: linear-gradient(
+    140deg,
+    $color-dark-grayish-blue,
+    $color-grayish-blue
+  );
 
   &__header {
     padding: 1rem;
