@@ -27,6 +27,7 @@ class App extends React.Component {
   render() {
     const { weather } = this.state;
     if (weather) return <div>A weather</div>;
+    return <div>No weather!</div>;
   }
 }
 
