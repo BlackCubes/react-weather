@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import { getCoordinates, getWeatherData } from './util';
+// import { getCoordinates, getWeatherData } from './util';
 
 class App extends React.Component {
   constructor(props) {

@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import '../public/css/style.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import WeatherDetails from './WeatherSummary';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
+    <App />
     <main>
       <WeatherDetails
         location="Fresno"
