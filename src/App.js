@@ -28,10 +28,12 @@ class App extends React.Component {
   render() {
     const { isLoading, weather, error } = this.state;
     return (
-      <div style={{ fontSize: '1.6rem' }}>
+      <div className="paragraph">
         {isLoading && <div>Loading...</div>}
         {weather && (
-          <pre style={{ color: '#ff7f50' }}>{JSON.stringify(weather)}</pre>
+          <pre style={{ color: '#ff7f50' }}>
+            {JSON.stringify(weather, undefined, 4)}
+          </pre>
         )}
         {error && <div>{error}</div>}
       </div>
