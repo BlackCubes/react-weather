@@ -44,33 +44,33 @@ const WeatherDetails = ({
   };
 
   return (
-    <div className="weather-summary-wrapper">
-      <div className="weather-summary">
-        <div className="weather-summary__header">
-          <div className="weather-summary__header-location heading-primary">
+    <div className="weather-details-wrapper">
+      <div className="weather-details">
+        <div className="weather-details__header">
+          <div className="weather-details__header-location heading-primary">
             {location}
           </div>
 
-          <div className="weather-summary__header-day paragraph">
+          <div className="weather-details__header-day paragraph">
             {dayOfWeek}
           </div>
 
-          <div className="weather-summary__header-weather paragraph">
+          <div className="weather-details__header-weather paragraph">
             {weatherCondition}
           </div>
         </div>
-        <div className="weather-summary__condition">
-          <div className="weather-summary__condition--primary">
-            <div className="weather-summary__condition-icon heading-secondary">
+        <div className="weather-details__condition">
+          <div className="weather-details__condition--primary">
+            <div className="weather-details__condition-icon heading-secondary">
               <FontAwesomeIcon icon={icon} />
             </div>
 
-            <div className="weather-summary__condition-temp">
-              <span className="weather-summary__condition-temp-value heading-secondary">
+            <div className="weather-details__condition-temp">
+              <span className="weather-details__condition-temp-value heading-secondary">
                 <Temperature temp={currentTemp} units={units} />
               </span>
 
-              <div className="weather-summary__condition-temp-unit book-size">
+              <div className="weather-details__condition-temp-unit book-size">
                 <span>&deg;F</span>
                 &nbsp; | &nbsp;
                 <button id="unitChange" type="button" onClick={handleClick}>
@@ -80,28 +80,28 @@ const WeatherDetails = ({
             </div>
           </div>
 
-          <div className="weather-summary__condition--secondary paragraph">
-            <div className="weather-summary__condition-hightemp">
+          <div className="weather-details__condition--secondary paragraph">
+            <div className="weather-details__condition-hightemp">
               High:&nbsp;
               <Temperature temp={highTemp} units={units} />
               &deg;
             </div>
 
-            <div className="weather-summary__condition-lowtemp">
+            <div className="weather-details__condition-lowtemp">
               Low:&nbsp;
               <Temperature temp={lowTemp} units={units} />
               &deg;
             </div>
 
-            <div className="weather-summary__condition-precipitation">
+            <div className="weather-details__condition-precipitation">
               {`Precipitation: ${precipitation + String.fromCharCode(37)}`}
             </div>
 
-            <div className="weather-summary__condition-humidity">
+            <div className="weather-details__condition-humidity">
               {`Humidity: ${humidity + String.fromCharCode(37)}`}
             </div>
 
-            <div className="weather-summary__condition-windspeed">
+            <div className="weather-details__condition-windspeed">
               {`Wind: ${windSpeed} mph`}
             </div>
           </div>
