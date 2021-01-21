@@ -29,9 +29,7 @@ class App extends React.Component {
     const { isLoading, weather, error } = this.state;
     console.log('weather', weather);
 
-    return (
-      <div>{isLoading ? 'Loading...' : error ? error : 'Data successful'}</div>
-    );
+    return <div>{isLoading ? 'Loading...' : error || 'Data successful'}</div>;
   }
 }
 
