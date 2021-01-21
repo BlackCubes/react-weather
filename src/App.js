@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // isLoading: true,
+      isLoading: true,
       weather: null,
       // error: null,
     };
@@ -19,15 +19,17 @@ class App extends React.Component {
       const { latitude, longitude } = pos.coords;
       const weather = await getWeatherData(latitude, longitude);
       this.setState({ weather });
+      this.setState({ isLoading: false });
     };
     const errorGeo = (err) => console.log(err);
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
   render() {
-    const { weather } = this.state;
-    if (weather) return <div>A weather</div>;
-    return <div>No weather!</div>;
+    const { isLoading, weather } = this.state;
+    console.log('weather', weather);
+
+    return <div>{isLoading ? 'Loading...' : 'A weather!'}</div>;
   }
 }
 
