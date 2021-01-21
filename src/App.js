@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       weather: null,
-      // error: null,
+      error: null,
     };
   }
 
@@ -21,15 +21,17 @@ class App extends React.Component {
       this.setState({ weather });
       this.setState({ isLoading: false });
     };
-    const errorGeo = (err) => console.log(err);
+    const errorGeo = (err) => this.setState({ error: err.message });
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
   render() {
-    const { isLoading, weather } = this.state;
+    const { isLoading, weather, error } = this.state;
     console.log('weather', weather);
 
-    return <div>{isLoading ? 'Loading...' : 'A weather!'}</div>;
+    return (
+      <div>{isLoading ? 'Loading...' : error ? error : 'Data successful'}</div>
+    );
   }
 }
 
