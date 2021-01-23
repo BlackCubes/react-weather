@@ -104,7 +104,16 @@
 }
 
 .weather-summary {
-  border: 0.1rem solid $color-dark-black-blue;
+  border-top: 0.2rem solid $color-dark-black-blue;
+  border-top: 0.2rem solid $color-dark-black-blue;
+  border-right: 0.1rem solid $color-dark-black-blue;
+
+  &:first-child {
+    border-left: 0.2rem solid $color-dark-black-blue;
+  }
+  &:last-child {
+    border-right: 0.2rem solid $color-dark-black-blue;
+  }
 
   &__day {
     text-align: center;
