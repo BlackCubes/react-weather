@@ -23,6 +23,10 @@
   padding: 1rem;
 }
 
+.weather-details-wrapper {
+  border: 0.2rem solid $color-dark-black-blue;
+}
+
 .weather-forecast-wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -59,13 +63,14 @@
     //   font-size: 1.6rem;
     // }
 
-    // &-weather {
-    //   font-size: 1.6rem;
-    // }
+    &-weather {
+      text-transform: capitalize;
+    }
   }
 
   &__condition {
     display: flex;
+    padding: 1rem;
 
     &--primary {
       display: flex;
