@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// API
 export const getCoordinates = async (location) => {
   try {
     const apiUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAPQUEST_API}&location=${location}`;
@@ -20,6 +21,7 @@ export const getWeatherData = async (lat, lon) => {
   }
 };
 
+// DATETIME
 export const unixToDateTime = (unix) => new Date(unix * 1000);
 
 export const dateTimeFormat = (language, options, format) =>
