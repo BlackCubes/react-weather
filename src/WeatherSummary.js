@@ -6,13 +6,13 @@ import WeatherIcon from './WeatherIcon';
 const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
   // <div className="weather-summary-wrapper">
   <div className="weather-summary">
-    <div className="weather-summary__day">{dayOfWeek}</div>
+    <div className="weather-summary__day paragraph">{dayOfWeek}</div>
 
     <div className="weather-summary__icon">
       <WeatherIcon weatherIcon={icon} />
     </div>
 
-    <div className="weather-summary__temp">
+    <div className="weather-summary__temp paragraph">
       <div className="weather-summary__temp-high">{highTemp}</div>
 
       <div className="weather-summary__temp-low">{lowTemp}</div>
