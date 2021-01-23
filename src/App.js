@@ -4,7 +4,6 @@ import './App.css';
 
 import WeatherDetails from './WeatherDetails';
 import WeatherForecast from './WeatherForecast';
-import WeatherSummary from './WeatherSummary';
 
 import {
   getLocation,
@@ -79,20 +78,6 @@ class App extends React.Component {
           />
 
           <WeatherForecast forecast={weather.daily} />
-
-          {/* {weather.daily.map((prop) => (
-            <WeatherSummary
-              key={prop.dt}
-              dayOfWeek={dateTimeFormat(
-                'en-US',
-                { weekday: 'long' },
-                unixToDateTime(prop.dt)
-              )}
-              icon={prop.weather[0].icon}
-              highTemp={prop.temp.max}
-              lowTemp={prop.temp.min}
-            />
-          ))} */}
         </div>
       )
     );
@@ -100,44 +85,5 @@ class App extends React.Component {
     return <main>{isLoading ? <div>Loading...</div> : renderedContent}</main>;
   }
 }
-
-// function App() {
-//   const [lat, setLat] = React.useState(false);
-//   const [lon, setLon] = React.useState(false);
-//   const [weather, setWeather] = React.useState({});
-
-//   React.useEffect(() => {
-//     getCoordinates('Fresno').then((data) => {
-//       setLat(data.lat);
-//       setLon(data.lng);
-//     });
-//   }, []);
-
-//   React.useEffect(() => {
-//     if (lat && lon) getWeatherData(lat, lon).then((data) => setWeather(data));
-//   }, [lat, lon]);
-
-//   console.log('lat: ', lat);
-//   console.log('lon: ', lon);
-//   console.log('weather: ', weather);
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         {/* <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p> */}
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
