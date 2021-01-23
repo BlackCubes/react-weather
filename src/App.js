@@ -18,44 +18,18 @@ class App extends React.Component {
       isLoading: true,
       weather: null,
       location: null,
-      latLon: null,
       error: null,
     };
-
-    this.weatherDataApi = this.weatherDataApi.bind(this);
-    this.locationApi = this.locationApi.bind(this);
   }
 
   componentDidMount() {
-    const { latLon } = this.state;
-    this.weatherDataApi();
-    // const successGeo = async (pos) => {
-    //   try {
-    //     const { latitude, longitude } = pos.coords;
-    //     const weather = await getWeatherData(latitude, longitude);
-    //     this.setState({
-    //       weather,
-    //       latLon: `${latitude},${longitude}`,
-    //       isLoading: false,
-    //     });
-    //   } catch (err) {
-    //     this.setState({ error: err.message, isLoading: false });
-    //   }
-    // };
-    // const errorGeo = (err) =>
-    //   this.setState({ error: err.message, isLoading: false });
-    // navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
-    if (latLon) this.locationApi();
-  }
-
-  weatherDataApi() {
     const successGeo = async (pos) => {
       try {
         const { latitude, longitude } = pos.coords;
         const weather = await getWeatherData(latitude, longitude);
+        await getLocation(latitude, longitude);
         this.setState({
           weather,
-          latLon: `${latitude},${longitude}`,
           isLoading: false,
         });
       } catch (err) {
@@ -67,19 +41,8 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
-  async locationApi() {
-    try {
-      const { latLon } = this.state;
-      const location = await getLocation(latLon);
-      this.setState({ location });
-    } catch (err) {
-      this.setState({ error: err.message });
-    }
-  }
-
   render() {
-    const { isLoading, weather, latLon, location, error } = this.state;
-    console.log('latLon: ', latLon);
+    const { isLoading, weather, location, error } = this.state;
     console.log('location: ', location);
 
     const renderedContent = error ? (
