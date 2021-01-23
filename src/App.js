@@ -44,6 +44,7 @@ class App extends React.Component {
     // const errorGeo = (err) =>
     //   this.setState({ error: err.message, isLoading: false });
     // navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
+    this.locationApi();
   }
 
   weatherDataApi() {
