@@ -44,8 +44,6 @@ class App extends React.Component {
     return (
       <div className="heading-secondary">
         {isLoading ? <div>Loading...</div> : renderedContent}
-        {weather && <pre>{JSON.stringify(weather, undefined, 4)}</pre>}
-        {error && <div>{error}</div>}
       </div>
     );
   }
