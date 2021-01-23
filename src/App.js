@@ -16,20 +16,34 @@ class App extends React.Component {
 
   componentDidMount() {
     const successGeo = async (pos) => {
-      const { latitude, longitude } = pos.coords;
-      const weather = await getWeatherData(latitude, longitude);
-      this.setState({ weather });
-      this.setState({ isLoading: false });
+      try {
+        const { latitude, longitude } = pos.coords;
+        const weather = await getWeatherData(latitude, longitude);
+        this.setState({
+          weather,
+          isLoading: false,
+        });
+      } catch (err) {
+        this.setState({ error: err.message, isLoading: false });
+      }
     };
-    const errorGeo = (err) => this.setState({ error: err.message });
+    const errorGeo = (err) =>
+      this.setState({ error: err.message, isLoading: false });
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
   render() {
     const { isLoading, weather, error } = this.state;
+
+    const renderedContent = error ? (
+      <>{error}</>
+    ) : (
+      weather && <pre>{JSON.stringify(weather, undefined, 4)}</pre>
+    );
+
     return (
       <div className="heading-secondary">
-        {isLoading && <div>Loading...</div>}
+        {isLoading ? <div>Loading...</div> : renderedContent}
         {weather && <pre>{JSON.stringify(weather, undefined, 4)}</pre>}
         {error && <div>{error}</div>}
       </div>
