@@ -93,7 +93,7 @@ class App extends React.Component {
       )
     );
 
-    return <div>{isLoading ? <div>Loading...</div> : renderedContent}</div>;
+    return <main>{isLoading ? <div>Loading...</div> : renderedContent}</main>;
   }
 }
 
