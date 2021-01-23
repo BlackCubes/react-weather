@@ -27,9 +27,10 @@ class App extends React.Component {
       try {
         const { latitude, longitude } = pos.coords;
         const weather = await getWeatherData(latitude, longitude);
-        await getLocation(latitude, longitude);
+        const location = await getLocation(latitude, longitude);
         this.setState({
           weather,
+          location,
           isLoading: false,
         });
       } catch (err) {

@@ -15,7 +15,7 @@ export const getLocation = async (lat, lon) => {
   try {
     const apiUrl = `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAPQUEST_API}&location=${lat},${lon}`;
     const res = await axios.get(apiUrl);
-    console.log(res);
+    if (res.status === 200) return res.data.results[0].locations[0].adminArea5;
   } catch (err) {
     console.log(err);
   }
