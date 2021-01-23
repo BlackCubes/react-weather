@@ -7,7 +7,7 @@ import { unixToDateTime, dateTimeFormat } from './util';
 
 const WeatherForecast = ({ forecast }) => (
   <div className="weather-forecast-wrapper">
-    {forecast.daily.map((prop) => (
+    {forecast.map((prop) => (
       <WeatherSummary
         key={prop.dt}
         dayOfWeek={dateTimeFormat(
