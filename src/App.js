@@ -45,7 +45,7 @@ class App extends React.Component {
           {weather.daily.map((prop) => (
             <WeatherSummary
               key={unixToDateTime(prop.dt)}
-              dayOfWeek="Friday"
+              dayOfWeek={unixToDateTime(prop.dt).getDay()}
               icon={prop.weather[0].icon}
               highTemp={prop.temp.max}
               lowTemp={prop.temp.min}
