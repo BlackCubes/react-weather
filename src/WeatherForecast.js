@@ -16,8 +16,8 @@ const WeatherForecast = ({ forecast }) => (
           unixToDateTime(prop.dt)
         )}
         icon={prop.weather[0].icon}
-        highTemp={prop.temp.max}
-        lowTemp={prop.temp.min}
+        highTemp={Math.round(prop.temp.max)}
+        lowTemp={Math.round(prop.temp.min)}
       />
     ))}
   </div>
