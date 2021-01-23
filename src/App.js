@@ -50,7 +50,7 @@ class App extends React.Component {
       <>{error}</>
     ) : (
       weather && (
-        <>
+        <div className="weather-wrapper">
           <WeatherDetails
             location={location}
             dayOfWeek={dateTimeFormat(
@@ -76,6 +76,7 @@ class App extends React.Component {
             humidity={weather.current.humidity}
             windSpeed={Math.round(weather.current.wind_speed)}
           />
+
           {weather.daily.map((prop) => (
             <WeatherSummary
               key={prop.dt}
@@ -89,7 +90,7 @@ class App extends React.Component {
               lowTemp={prop.temp.min}
             />
           ))}
-        </>
+        </div>
       )
     );
 
