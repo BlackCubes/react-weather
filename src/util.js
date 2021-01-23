@@ -11,9 +11,9 @@ export const getCoordinates = async (location) => {
   }
 };
 
-export const getLocation = async (latLon) => {
+export const getLocation = async (lat, lon) => {
   try {
-    const apiUrl = `http://www.mapquestapi.com/geocoding/v1/reverse?${process.env.REACT_APP_MAPQUEST_API}&location=${latLon}`;
+    const apiUrl = `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAPQUEST_API}&location=${lat},${lon}`;
     const res = await axios.get(apiUrl);
     console.log(res);
   } catch (err) {
