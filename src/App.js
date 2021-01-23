@@ -42,15 +42,15 @@ class App extends React.Component {
     ) : (
       weather && (
         <>
-          {weather.daily.map((prop, key) => {
+          {weather.daily.map((prop) => (
             <WeatherSummary
               key={prop.dt}
-              dayOfWeek={'Friday'}
+              dayOfWeek="Friday"
               icon={prop.weather[0].icon}
               highTemp={prop.temp.max}
               lowTemp={prop.temp.min}
-            />;
-          })}
+            />
+          ))}
         </>
       )
     );
