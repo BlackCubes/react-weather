@@ -59,7 +59,7 @@ class App extends React.Component {
               unixToDateTime(weather.current.dt)
             )}
             weatherCondition={weather.current.weather[0].description}
-            icon="cloud-sun-rain"
+            icon={weather.current.weather[0].icon}
             currentTemp={Math.round(weather.current.temp)}
             highTemp={Math.round(
               weather.daily[unixToDateTime(weather.current.dt).getDay()].temp

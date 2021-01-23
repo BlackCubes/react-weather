@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons';
 
 import Temperature from './Temperature';
-
-library.add(faCloudSunRain);
+import WeatherIcon from './WeatherIcon';
 
 const WeatherDetails = ({
   location,
@@ -62,7 +58,7 @@ const WeatherDetails = ({
         <div className="weather-details__condition">
           <div className="weather-details__condition--primary">
             <div className="weather-details__condition-icon heading-secondary">
-              <FontAwesomeIcon icon={icon} />
+              <WeatherIcon weatherIcon={icon} />
             </div>
 
             <div className="weather-details__condition-temp">
