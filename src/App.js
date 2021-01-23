@@ -62,16 +62,16 @@ class App extends React.Component {
             icon="cloud-sun-rain"
             currentTemp={Math.round(weather.current.temp)}
             highTemp={Math.round(
-              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
-                .temp.max
+              weather.daily[unixToDateTime(weather.current.dt).getDay()].temp
+                .max
             )}
             lowTemp={Math.round(
-              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
-                .temp.min
+              weather.daily[unixToDateTime(weather.current.dt).getDay()].temp
+                .min
             )}
             precipitation={
-              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
-                .pop * 100
+              weather.daily[unixToDateTime(weather.current.dt).getDay()].pop *
+              100
             }
             humidity={weather.current.humidity}
             windSpeed={Math.round(weather.current.wind_speed)}
