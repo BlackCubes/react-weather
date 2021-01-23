@@ -27,6 +27,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    const { latLon } = this.state;
     this.weatherDataApi();
     // const successGeo = async (pos) => {
     //   try {
@@ -44,7 +45,7 @@ class App extends React.Component {
     // const errorGeo = (err) =>
     //   this.setState({ error: err.message, isLoading: false });
     // navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
-    this.locationApi();
+    if (latLon) this.locationApi();
   }
 
   weatherDataApi() {
