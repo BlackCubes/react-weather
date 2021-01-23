@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => {
+const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
   <div className="weather-summary-wrapper">
     <div className="weather-summary">
       <div className="weather-summary__day">{dayOfWeek}</div>
@@ -14,8 +14,8 @@ const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => {
         <div className="weather-summary__temp-low">{lowTemp}</div>
       </div>
     </div>
-  </div>;
-};
+  </div>
+);
 
 WeatherSummary.propTypes = {
   dayOfWeek: PropTypes.string.isRequired,
