@@ -4,7 +4,12 @@ import './App.css';
 
 import WeatherSummary from './WeatherSummary';
 
-import { getWeatherData, unixToDateTime, dateTimeFormat } from './util';
+import {
+  getLocation,
+  getWeatherData,
+  unixToDateTime,
+  dateTimeFormat,
+} from './util';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +17,7 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       weather: null,
+      location: null,
       error: null,
     };
   }
@@ -21,8 +27,10 @@ class App extends React.Component {
       try {
         const { latitude, longitude } = pos.coords;
         const weather = await getWeatherData(latitude, longitude);
+        const location = await getLocation(latitude, longitude);
         this.setState({
           weather,
+          location,
           isLoading: false,
         });
       } catch (err) {
@@ -35,7 +43,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, weather, error } = this.state;
+    const { isLoading, weather, location, error } = this.state;
+    console.log('location: ', location);
 
     const renderedContent = error ? (
       <>{error}</>
