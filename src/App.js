@@ -4,7 +4,7 @@ import './App.css';
 
 import WeatherSummary from './WeatherSummary';
 
-import { getWeatherData } from './util';
+import { getWeatherData, unixToDateTime } from './util';
 
 class App extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class App extends React.Component {
         <>
           {weather.daily.map((prop) => (
             <WeatherSummary
-              key={prop.dt}
+              key={unixToDateTime(prop.dt)}
               dayOfWeek="Friday"
               icon={prop.weather[0].icon}
               highTemp={prop.temp.max}
