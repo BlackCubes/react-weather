@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import WeatherIcon from './WeatherIcon';
+
 const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp }) => (
   // <div className="weather-summary-wrapper">
   <div className="weather-summary">
     <div className="weather-summary__day">{dayOfWeek}</div>
 
-    <div className="weather-summary__icon">{icon}</div>
+    <div className="weather-summary__icon">
+      <WeatherIcon weatherIcon={icon} />
+    </div>
 
     <div className="weather-summary__temp">
       <div className="weather-summary__temp-high">{highTemp}</div>
