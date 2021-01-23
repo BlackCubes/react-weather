@@ -57,7 +57,7 @@ const WeatherDetails = ({
         </div>
         <div className="weather-details__condition">
           <div className="weather-details__condition--primary">
-            <div className="weather-details__condition-icon heading-secondary">
+            <div className="weather-details__condition-icon">
               <WeatherIcon weatherIcon={icon} />
             </div>
 
