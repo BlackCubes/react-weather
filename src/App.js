@@ -2,6 +2,8 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import WeatherSummary from './WeatherSummary';
+
 import { getWeatherData } from './util';
 
 class App extends React.Component {
@@ -38,14 +40,22 @@ class App extends React.Component {
     const renderedContent = error ? (
       <>{error}</>
     ) : (
-      weather && <pre>{JSON.stringify(weather, undefined, 4)}</pre>
+      weather && (
+        <>
+          {weather.daily.map((prop, key) => {
+            <WeatherSummary
+              key={prop.dt}
+              dayOfWeek={'Friday'}
+              icon={prop.weather[0].icon}
+              highTemp={prop.temp.max}
+              lowTemp={prop.temp.min}
+            />;
+          })}
+        </>
+      )
     );
 
-    return (
-      <div className="heading-secondary">
-        {isLoading ? <div>Loading...</div> : renderedContent}
-      </div>
-    );
+    return <div>{isLoading ? <div>Loading...</div> : renderedContent}</div>;
   }
 }
 
