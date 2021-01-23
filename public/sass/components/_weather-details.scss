@@ -23,13 +23,29 @@
   padding: 1rem;
 }
 
-.weather-details {
+.weather-forecast-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 1rem;
+}
+
+.weather-details-wrapper,
+.weather-forecast-wrapper {
   background-color: $color-grayish-blue;
   background-image: linear-gradient(
     140deg,
     $color-dark-grayish-blue,
     $color-grayish-blue
   );
+}
+
+.weather-details {
+  // background-color: $color-grayish-blue;
+  // background-image: linear-gradient(
+  //   140deg,
+  //   $color-dark-grayish-blue,
+  //   $color-grayish-blue
+  // );
 
   &__header {
     padding: 1rem;
@@ -84,5 +100,28 @@
     // &--secondary {
     //   font-size: 1.6rem;
     // }
+  }
+}
+
+.weather-summary {
+  border: 0.1rem solid $color-dark-black-blue;
+
+  &__day {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__temp {
+    display: flex;
+    justify-content: center;
+
+    &-high {
+      margin-right: 1rem;
+    }
+
+    &-high::after,
+    &-low::after {
+      content: '\00b0';
+    }
   }
 }
