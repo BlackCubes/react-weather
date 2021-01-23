@@ -19,3 +19,5 @@ export const getWeatherData = async (lat, lon) => {
     console.log(err);
   }
 };
+
+export const unixToDateTime = (unix) => new Date(unix * 1000);
