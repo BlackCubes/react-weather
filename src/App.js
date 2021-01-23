@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 
 import WeatherDetails from './WeatherDetails';
+import WeatherForecast from './WeatherForecast';
 import WeatherSummary from './WeatherSummary';
 
 import {
@@ -77,7 +78,9 @@ class App extends React.Component {
             windSpeed={Math.round(weather.current.wind_speed)}
           />
 
-          {weather.daily.map((prop) => (
+          <WeatherForecast forecast={weather.daily} />
+
+          {/* {weather.daily.map((prop) => (
             <WeatherSummary
               key={prop.dt}
               dayOfWeek={dateTimeFormat(
@@ -89,7 +92,7 @@ class App extends React.Component {
               highTemp={prop.temp.max}
               lowTemp={prop.temp.min}
             />
-          ))}
+          ))} */}
         </div>
       )
     );
