@@ -21,3 +21,6 @@ export const getWeatherData = async (lat, lon) => {
 };
 
 export const unixToDateTime = (unix) => new Date(unix * 1000);
+
+export const dateTimeFormat = (language, options, format) =>
+  new Intl.DateTimeFormat(language, options).format(format);
