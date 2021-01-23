@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import WeatherDetails from './WeatherDetails';
 import WeatherSummary from './WeatherSummary';
 
 import {
@@ -44,13 +45,37 @@ class App extends React.Component {
 
   render() {
     const { isLoading, weather, location, error } = this.state;
-    console.log('location: ', location);
 
     const renderedContent = error ? (
       <>{error}</>
     ) : (
       weather && (
         <>
+          <WeatherDetails
+            location={location}
+            dayOfWeek={dateTimeFormat(
+              'en-US',
+              { weekday: 'long' },
+              unixToDateTime(weather.current.dt)
+            )}
+            weatherCondition={weather.current.weather[0].description}
+            icon="cloud-sun-rain"
+            currentTemp={Math.round(weather.current.temp)}
+            highTemp={Math.round(
+              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
+                .temp.max
+            )}
+            lowTemp={Math.round(
+              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
+                .temp.min
+            )}
+            precipitation={
+              weather.weather.daily[unixToDateTime(weather.current.dt).getDay()]
+                .pop * 100
+            }
+            humidity={weather.current.humidity}
+            windSpeed={Math.round(weather.current.wind_speed)}
+          />
           {weather.daily.map((prop) => (
             <WeatherSummary
               key={prop.dt}
