@@ -44,9 +44,7 @@ WeatherForecast.propTypes = {
   forecast: PropTypes.arrayOf(PropTypes.object).isRequired,
   getIndexFromComp: PropTypes.func.isRequired,
   activeClass: PropTypes.func.isRequired,
-  units: PropTypes.oneOf(['imperial', 'metric']),
+  units: PropTypes.oneOf(['imperial', 'metric']).isRequired,
 };
-
-WeatherForecast.defaultProps = { units: 'imperial' };
 
 export default WeatherForecast;
