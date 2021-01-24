@@ -156,7 +156,10 @@
       rgba($color-grayish-blue, 0.7),
       rgba($color-bright-blue, 0.7)
     );
-    border: none;
+    border-top: 0.1rem solid rgba($color-dark-black-blue, 0.17);
+    border-bottom: 0.1rem solid rgba($color-dark-black-blue, 0.17);
+    border-left: none;
+    border-right: none;
 
     > .weather-summary__day {
       font-size: 1.5rem;
