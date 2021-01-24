@@ -5,7 +5,7 @@ import WeatherSummary from './WeatherSummary';
 
 import { unixToDateTime, dateTimeFormat } from './util';
 
-const WeatherForecast = ({ forecast, getIndexFromComp }) => {
+const WeatherForecast = ({ forecast, getIndexFromComp, activeClass }) => {
   const onClick = (e) => {
     const clickedIndex = [...e.currentTarget.parentNode.children].indexOf(
       e.currentTarget
@@ -15,7 +15,7 @@ const WeatherForecast = ({ forecast, getIndexFromComp }) => {
 
   return (
     <div className="weather-forecast-wrapper">
-      {forecast.slice(0, 5).map((prop) => (
+      {forecast.slice(0, 5).map((prop, key) => (
         <WeatherSummary
           key={prop.dt}
           dayOfWeek={dateTimeFormat(
@@ -27,6 +27,7 @@ const WeatherForecast = ({ forecast, getIndexFromComp }) => {
           highTemp={Math.round(prop.temp.max)}
           lowTemp={Math.round(prop.temp.min)}
           onClick={onClick}
+          activeClass={activeClass(key)}
         />
       ))}
     </div>
@@ -36,6 +37,7 @@ const WeatherForecast = ({ forecast, getIndexFromComp }) => {
 WeatherForecast.propTypes = {
   forecast: PropTypes.arrayOf(PropTypes.object).isRequired,
   getIndexFromComp: PropTypes.func.isRequired,
+  activeClass: PropTypes.func.isRequired,
 };
 
 export default WeatherForecast;
