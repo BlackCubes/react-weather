@@ -167,6 +167,10 @@
     }
   }
 
+  &:not(.active) {
+    cursor: pointer;
+  }
+
   &__day {
     text-align: center;
     margin-top: 1rem;
