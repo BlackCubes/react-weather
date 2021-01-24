@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 
 import WeatherIcon from './WeatherIcon';
 
-const WeatherSummary = ({ dayOfWeek, icon, highTemp, lowTemp, onClick }) => (
+const WeatherSummary = ({
+  dayOfWeek,
+  icon,
+  highTemp,
+  lowTemp,
+  onClick,
+  activeClass,
+}) => (
   // <div className="weather-summary-wrapper">
   <div
-    className="weather-summary"
+    className={`weather-summary ${activeClass}`}
     onClick={onClick}
     onKeyDown={onClick}
     role="presentation"
@@ -32,6 +39,11 @@ WeatherSummary.propTypes = {
   highTemp: PropTypes.number.isRequired,
   lowTemp: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
+  activeClass: PropTypes.string,
+};
+
+WeatherSummary.defaultProps = {
+  activeClass: '',
 };
 
 export default WeatherSummary;
