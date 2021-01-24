@@ -18,28 +18,6 @@ const WeatherDetails = ({
   windSpeed,
   convertTempUnits,
 }) => (
-  // const handleClick = () => {
-  //   const unitChangeId = document.getElementById('unitChange');
-  //   const { parentElement } = unitChangeId;
-
-  //   const swap = (nodeA, nodeB) => {
-  //     const parentA = nodeA.parentNode;
-  //     const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
-  //     nodeB.parentNode.insertBefore(nodeA, nodeB);
-  //     parentA.insertBefore(nodeB, siblingA);
-  //   };
-
-  //   [...parentElement.children].forEach((child) => {
-  //     if (child.nodeName !== 'A') {
-  //       swap(child, unitChangeId);
-  //       const swappedText = child.textContent;
-  //       const originalText = unitChangeId.textContent;
-  //       child.textContent = originalText;
-  //       unitChangeId.textContent = swappedText;
-  //     }
-  //   });
-  // };
-
   <div className="weather-details-wrapper">
     <div className="weather-details">
       <div className="weather-details__header">
@@ -80,9 +58,6 @@ const WeatherDetails = ({
               >
                 C
               </span>
-              {/* <button id="unitChange" type="button" onClick={handleClick}>
-                <span>&deg;C</span>
-              </button> */}
             </div>
           </div>
         </div>
