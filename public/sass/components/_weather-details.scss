@@ -99,6 +99,10 @@
         // font-size: 1.2rem;
         margin-top: 0.5rem;
         margin-left: 0.3rem;
+
+        & > span::before {
+          content: '\00b0';
+        }
       }
     }
 

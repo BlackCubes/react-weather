@@ -64,9 +64,9 @@ const WeatherDetails = ({
             </span>
 
             <div className="weather-details__condition-temp-unit book-size">
-              <span>&deg;F</span>
+              <span>F</span>
               &nbsp; | &nbsp;
-              <span>&deg;C</span>
+              <span>C</span>
               {/* <button id="unitChange" type="button" onClick={handleClick}>
                 <span>&deg;C</span>
               </button> */}
