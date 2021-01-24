@@ -5,11 +5,12 @@ import WeatherSummary from './WeatherSummary';
 
 import { unixToDateTime, dateTimeFormat } from './util';
 
-const WeatherForecast = ({ forecast }) => {
+const WeatherForecast = ({ forecast, compClickedIndex }) => {
   const onClick = (e) => {
-    console.log(
-      [...e.currentTarget.parentNode.children].indexOf(e.currentTarget)
+    compClickedIndex = [...e.currentTarget.parentNode.children].indexOf(
+      e.currentTarget
     );
+    console.log('At WeatherForecast.js: ', compClickedIndex);
   };
 
   return (
@@ -34,6 +35,7 @@ const WeatherForecast = ({ forecast }) => {
 
 WeatherForecast.propTypes = {
   forecast: PropTypes.arrayOf(PropTypes.object).isRequired,
+  compClickedIndex: PropTypes.number.isRequired,
 };
 
 export default WeatherForecast;
