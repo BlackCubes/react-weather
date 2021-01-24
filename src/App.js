@@ -63,7 +63,6 @@ class App extends React.Component {
 
   render() {
     const { isLoading, error, weather, location, index } = this.state;
-    console.log('At App.js: ', index);
 
     const renderedContent = error ? (
       <>{error}</>
