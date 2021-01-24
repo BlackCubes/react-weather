@@ -103,8 +103,8 @@ class App extends React.Component {
             )}
             precipitation={
               index === 0
-                ? weather.daily[0].pop * 100
-                : weather.daily[index].pop * 100
+                ? Math.round(weather.daily[0].pop * 100)
+                : Math.round(weather.daily[index].pop * 100)
             }
             humidity={
               index === 0
