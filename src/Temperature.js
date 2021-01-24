@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const Temperature = ({ temp, units }) =>
+const WeatherTemp = ({ temp, units }) =>
   units === 'metric' ? Math.round((temp - 32) / 1.8) : temp;
 
-Temperature.propTypes = {
+WeatherTemp.propTypes = {
   temp: PropTypes.number.isRequired,
   units: PropTypes.oneOf(['imperial', 'metric']).isRequired,
 };
 
-export default Temperature;
+export default WeatherTemp;
