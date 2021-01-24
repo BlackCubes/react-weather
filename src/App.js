@@ -30,8 +30,8 @@ class App extends React.Component {
       tempUnit: 'imperial',
     };
 
-    this.convertTempUnits = this.convertTempUnits.bind(this);
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
+    this.convertTempUnits = this.convertTempUnits.bind(this);
     this.activeClass = this.activeClass.bind(this);
   }
 
@@ -39,8 +39,7 @@ class App extends React.Component {
     const successGeo = async (pos) => {
       try {
         const { latitude, longitude } = pos.coords;
-        const { tempUnit } = this.state;
-        const weather = await getWeatherData(latitude, longitude, tempUnit);
+        const weather = await getWeatherData(latitude, longitude);
         const location = await getLocation(latitude, longitude);
         this.setState({
           weather,
@@ -71,7 +70,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, error, weather, location, index } = this.state;
+    const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = error ? (
       <>{error}</>
@@ -126,6 +125,7 @@ class App extends React.Component {
                 : weather.daily[index].wind_speed
             )}
             convertTempUnits={this.convertTempUnits}
+            units={tempUnit}
           />
 
           <WeatherForecast
