@@ -16,6 +16,7 @@ const WeatherDetails = ({
   precipitation,
   humidity,
   windSpeed,
+  convertTempUnits,
 }) => (
   // const handleClick = () => {
   //   const unitChangeId = document.getElementById('unitChange');
@@ -64,9 +65,21 @@ const WeatherDetails = ({
             </span>
 
             <div className="weather-details__condition-temp-unit book-size">
-              <span>F</span>
+              <span
+                onClick={convertTempUnits}
+                onKeyDown={convertTempUnits}
+                role="presentation"
+              >
+                F
+              </span>
               &nbsp; | &nbsp;
-              <span>C</span>
+              <span
+                onClick={convertTempUnits}
+                onKeyDown={convertTempUnits}
+                role="presentation"
+              >
+                C
+              </span>
               {/* <button id="unitChange" type="button" onClick={handleClick}>
                 <span>&deg;C</span>
               </button> */}
@@ -116,6 +129,7 @@ WeatherDetails.propTypes = {
   precipitation: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
   windSpeed: PropTypes.number.isRequired,
+  convertTempUnits: PropTypes.func.isRequired,
 };
 
 WeatherDetails.defaultProps = {
