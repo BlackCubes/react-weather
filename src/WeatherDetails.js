@@ -16,96 +16,93 @@ const WeatherDetails = ({
   precipitation,
   humidity,
   windSpeed,
-}) => {
-  const handleClick = () => {
-    const unitChangeId = document.getElementById('unitChange');
-    const { parentElement } = unitChangeId;
+}) => (
+  // const handleClick = () => {
+  //   const unitChangeId = document.getElementById('unitChange');
+  //   const { parentElement } = unitChangeId;
 
-    const swap = (nodeA, nodeB) => {
-      const parentA = nodeA.parentNode;
-      const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
-      nodeB.parentNode.insertBefore(nodeA, nodeB);
-      parentA.insertBefore(nodeB, siblingA);
-    };
+  //   const swap = (nodeA, nodeB) => {
+  //     const parentA = nodeA.parentNode;
+  //     const siblingA = nodeA.nextSibling === nodeB ? nodeA : nodeA.nextSibling;
+  //     nodeB.parentNode.insertBefore(nodeA, nodeB);
+  //     parentA.insertBefore(nodeB, siblingA);
+  //   };
 
-    [...parentElement.children].forEach((child) => {
-      if (child.nodeName !== 'A') {
-        swap(child, unitChangeId);
-        const swappedText = child.textContent;
-        const originalText = unitChangeId.textContent;
-        child.textContent = originalText;
-        unitChangeId.textContent = swappedText;
-      }
-    });
-  };
+  //   [...parentElement.children].forEach((child) => {
+  //     if (child.nodeName !== 'A') {
+  //       swap(child, unitChangeId);
+  //       const swappedText = child.textContent;
+  //       const originalText = unitChangeId.textContent;
+  //       child.textContent = originalText;
+  //       unitChangeId.textContent = swappedText;
+  //     }
+  //   });
+  // };
 
-  return (
-    <div className="weather-details-wrapper">
-      <div className="weather-details">
-        <div className="weather-details__header">
-          <div className="weather-details__header-location heading-primary">
-            {location}
+  <div className="weather-details-wrapper">
+    <div className="weather-details">
+      <div className="weather-details__header">
+        <div className="weather-details__header-location heading-primary">
+          {location}
+        </div>
+
+        <div className="weather-details__header-day paragraph">{dayOfWeek}</div>
+
+        <div className="weather-details__header-weather paragraph">
+          {weatherCondition}
+        </div>
+      </div>
+      <div className="weather-details__condition">
+        <div className="weather-details__condition--primary">
+          <div className="weather-details__condition-icon">
+            <WeatherIcon weatherIcon={icon} />
           </div>
 
-          <div className="weather-details__header-day paragraph">
-            {dayOfWeek}
-          </div>
+          <div className="weather-details__condition-temp">
+            <span className="weather-details__condition-temp-value heading-secondary">
+              <Temperature temp={currentTemp} units={units} />
+            </span>
 
-          <div className="weather-details__header-weather paragraph">
-            {weatherCondition}
+            <div className="weather-details__condition-temp-unit book-size">
+              <span>&deg;F</span>
+              &nbsp; | &nbsp;
+              <span>&deg;C</span>
+              {/* <button id="unitChange" type="button" onClick={handleClick}>
+                <span>&deg;C</span>
+              </button> */}
+            </div>
           </div>
         </div>
-        <div className="weather-details__condition">
-          <div className="weather-details__condition--primary">
-            <div className="weather-details__condition-icon">
-              <WeatherIcon weatherIcon={icon} />
-            </div>
 
-            <div className="weather-details__condition-temp">
-              <span className="weather-details__condition-temp-value heading-secondary">
-                <Temperature temp={currentTemp} units={units} />
-              </span>
-
-              <div className="weather-details__condition-temp-unit book-size">
-                <span>&deg;F</span>
-                &nbsp; | &nbsp;
-                <button id="unitChange" type="button" onClick={handleClick}>
-                  <span>&deg;C</span>
-                </button>
-              </div>
-            </div>
+        <div className="weather-details__condition--secondary paragraph">
+          <div className="weather-details__condition-hightemp">
+            High:&nbsp;
+            <Temperature temp={highTemp} units={units} />
+            &deg;
           </div>
 
-          <div className="weather-details__condition--secondary paragraph">
-            <div className="weather-details__condition-hightemp">
-              High:&nbsp;
-              <Temperature temp={highTemp} units={units} />
-              &deg;
-            </div>
+          <div className="weather-details__condition-lowtemp">
+            Low:&nbsp;
+            <Temperature temp={lowTemp} units={units} />
+            &deg;
+          </div>
 
-            <div className="weather-details__condition-lowtemp">
-              Low:&nbsp;
-              <Temperature temp={lowTemp} units={units} />
-              &deg;
-            </div>
+          <div className="weather-details__condition-precipitation">
+            {`Precipitation: ${precipitation + String.fromCharCode(37)}`}
+          </div>
 
-            <div className="weather-details__condition-precipitation">
-              {`Precipitation: ${precipitation + String.fromCharCode(37)}`}
-            </div>
+          <div className="weather-details__condition-humidity">
+            {`Humidity: ${humidity + String.fromCharCode(37)}`}
+          </div>
 
-            <div className="weather-details__condition-humidity">
-              {`Humidity: ${humidity + String.fromCharCode(37)}`}
-            </div>
-
-            <div className="weather-details__condition-windspeed">
-              {`Wind: ${windSpeed} mph`}
-            </div>
+          <div className="weather-details__condition-windspeed">
+            {`Wind: ${windSpeed} mph`}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 WeatherDetails.propTypes = {
   location: PropTypes.string.isRequired,
