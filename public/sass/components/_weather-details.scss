@@ -136,17 +136,18 @@
     $color-dark-grayish-blue,
     $color-grayish-blue
   );
-  border-top: 0.2rem solid rgba($color-dark-black-blue, 0.11);
-  border-bottom: 0.2rem solid rgba($color-dark-black-blue, 0.11);
-  border-right: 0.1rem solid rgba($color-dark-black-blue, 0.11);
+  border: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // border-top: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // border-bottom: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // border-right: 0.1rem solid rgba($color-dark-black-blue, 0.11);
   border-radius: 2rem;
 
-  &:first-child {
-    border-left: 0.2rem solid rgba($color-dark-black-blue, 0.11);
-  }
-  &:last-child {
-    border-right: 0.2rem solid rgba($color-dark-black-blue, 0.11);
-  }
+  // &:first-child {
+  //   border-left: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // }
+  // &:last-child {
+  //   border-right: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // }
 
   &.active {
     background-color: $color-grayish-blue;
