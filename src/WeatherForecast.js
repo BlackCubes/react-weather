@@ -5,7 +5,12 @@ import WeatherSummary from './WeatherSummary';
 
 import { unixToDateTime, dateTimeFormat } from './util';
 
-const WeatherForecast = ({ forecast, getIndexFromComp, activeClass }) => {
+const WeatherForecast = ({
+  forecast,
+  getIndexFromComp,
+  activeClass,
+  units,
+}) => {
   const onClick = (e) => {
     const clickedIndex = [...e.currentTarget.parentNode.children].indexOf(
       e.currentTarget
@@ -28,6 +33,7 @@ const WeatherForecast = ({ forecast, getIndexFromComp, activeClass }) => {
           lowTemp={Math.round(prop.temp.min)}
           onClick={onClick}
           activeClass={activeClass(key)}
+          units={units}
         />
       ))}
     </div>
@@ -38,6 +44,9 @@ WeatherForecast.propTypes = {
   forecast: PropTypes.arrayOf(PropTypes.object).isRequired,
   getIndexFromComp: PropTypes.func.isRequired,
   activeClass: PropTypes.func.isRequired,
+  units: PropTypes.oneOf(['imperial', 'metric']),
 };
+
+WeatherForecast.defaultProps = { units: 'imperial' };
 
 export default WeatherForecast;
