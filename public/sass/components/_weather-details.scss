@@ -150,13 +150,17 @@
   // }
 
   &.active {
-    background-color: rgba($color-grayish-blue, 0.11);
+    background-color: rgba($color-grayish-blue, 0.7);
     background-image: linear-gradient(
       45deg,
-      rgba($color-grayish-blue, 0.11),
-      rgba($color-bright-blue, 0.11)
+      rgba($color-grayish-blue, 0.7),
+      rgba($color-bright-blue, 0.7)
     );
     border: none;
+
+    > .weather-summary__day {
+      font-size: 1.4rem;
+    }
   }
 
   &__day {
