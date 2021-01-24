@@ -31,3 +31,8 @@ body {
   );
   box-sizing: border-box;
 }
+
+::selection {
+  background-color: $color-bright-blue;
+  color: $color-black;
+}
