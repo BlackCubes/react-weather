@@ -103,6 +103,10 @@
         & > span::before {
           content: '\00b0';
         }
+
+        & > .active {
+          color: lightblue;
+        }
       }
     }
 
