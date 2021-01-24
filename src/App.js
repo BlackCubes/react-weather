@@ -125,6 +125,7 @@ class App extends React.Component {
                 ? weather.current.wind_speed
                 : weather.daily[index].wind_speed
             )}
+            convertTempUnits={this.convertTempUnits}
           />
 
           <WeatherForecast
