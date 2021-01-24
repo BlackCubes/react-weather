@@ -16,10 +16,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // -- UI/API LOADING/ERROR
       isLoading: true,
+      error: null,
+      // -- API
       weather: null,
       location: null,
-      error: null,
+      // -- INDEX OF CLICKED COMPONENT TO UPDATE WEATHER DETAILS
+      // STARTING WITH DEFAULT OF 0 (CURRENT DAY)
+      compClickedIndex: 0,
     };
   }
 
@@ -44,7 +49,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, weather, location, error } = this.state;
+    const {
+      isLoading,
+      error,
+      weather,
+      location,
+      compClickedIndex,
+    } = this.state;
+    console.log('At App.js: ', compClickedIndex);
 
     const renderedContent = error ? (
       <>{error}</>
