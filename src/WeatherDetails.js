@@ -45,6 +45,7 @@ const WeatherDetails = ({
 
             <div className="weather-details__condition-temp-unit book-size">
               <span
+                className="active"
                 onClick={convertTempUnits}
                 onKeyDown={convertTempUnits}
                 role="presentation"
