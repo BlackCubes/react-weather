@@ -8,7 +8,7 @@ import { unixToDateTime, dateTimeFormat } from './util';
 const WeatherForecast = ({ forecast }) => {
   const onClick = (e) => {
     console.log(
-      Array.from(e.currentTarget.parentNode.children).indexOf(e.currentTarget)
+      [...e.currentTarget.parentNode.children].indexOf(e.currentTarget)
     );
   };
 
