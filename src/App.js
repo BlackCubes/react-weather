@@ -26,6 +26,8 @@ class App extends React.Component {
       // STARTING WITH DEFAULT OF 0 (CURRENT DAY)
       compClickedIndex: 0,
     };
+
+    this.getIndexFromComp = this.getIndexFromComp.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +48,10 @@ class App extends React.Component {
     const errorGeo = (err) =>
       this.setState({ error: err.message, isLoading: false });
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
+  }
+
+  getIndexFromComp(index) {
+    this.setState({ compClickedIndex: index });
   }
 
   render() {
@@ -91,7 +97,7 @@ class App extends React.Component {
 
           <WeatherForecast
             forecast={weather.daily}
-            compClickedIndex={compClickedIndex}
+            getIndexFromComp={this.getIndexFromComp}
           />
         </div>
       )
