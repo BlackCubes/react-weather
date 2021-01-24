@@ -89,7 +89,10 @@ class App extends React.Component {
             windSpeed={Math.round(weather.current.wind_speed)}
           />
 
-          <WeatherForecast forecast={weather.daily} />
+          <WeatherForecast
+            forecast={weather.daily}
+            compClickedIndex={compClickedIndex}
+          />
         </div>
       )
     );
