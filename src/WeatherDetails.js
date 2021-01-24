@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import WeatherIcon from './WeatherIcon';
 import WeatherTemp from './WeatherTemp';
+import WeatherWindSpeed from './WeatherWindSpeed';
 
 const WeatherDetails = ({
   location,
@@ -84,7 +85,9 @@ const WeatherDetails = ({
           </div>
 
           <div className="weather-details__condition-windspeed">
-            {`Wind: ${windSpeed} mph`}
+            Wind:&nbsp;
+            <WeatherWindSpeed windSpeed={windSpeed} units={units} />
+            {/* {`Wind: ${windSpeed} mph`} */}
           </div>
         </div>
       </div>
