@@ -62,6 +62,12 @@ class App extends React.Component {
   convertTempUnits(e) {
     const { textContent } = e.target;
     this.setState({ tempUnit: textContent === 'C' ? 'metric' : 'imperial' });
+    const childrenArr = [...e.target.parentNode.children];
+    const clickedIndex = childrenArr.indexOf(e.target);
+    childrenArr.forEach((val, ind) => {
+      if (ind !== clickedIndex) val.classList.remove('active');
+    });
+    e.target.className = 'active';
   }
 
   activeClass(testIndex) {
