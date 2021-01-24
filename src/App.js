@@ -132,6 +132,7 @@ class App extends React.Component {
             forecast={weather.daily}
             getIndexFromComp={this.getIndexFromComp}
             activeClass={this.activeClass}
+            units={tempUnit}
           />
         </div>
       )
