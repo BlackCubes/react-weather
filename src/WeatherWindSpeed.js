@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const WeatherWindSpeed = ({ windSpeed, units }) =>
   units === 'metric'
-    ? `${Math.round(windSpeed / 2.237)} m/s`
+    ? `${Math.round((windSpeed / 2.237) * 3.6)} km/h`
     : `${windSpeed} mph`;
 
 WeatherWindSpeed.propTypes = {
