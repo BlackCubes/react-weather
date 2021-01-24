@@ -109,6 +109,10 @@
         & > .active {
           color: lightblue;
         }
+
+        & > span:not(.active) {
+          cursor: pointer;
+        }
       }
     }
 
