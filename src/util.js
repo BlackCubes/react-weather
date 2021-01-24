@@ -21,9 +21,9 @@ export const getLocation = async (lat, lon) => {
   }
 };
 
-export const getWeatherData = async (lat, lon) => {
+export const getWeatherData = async (lat, lon, units) => {
   try {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API}&units=imperial`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API}&units=${units}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data;
   } catch (err) {
