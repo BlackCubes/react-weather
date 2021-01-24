@@ -69,25 +69,16 @@ class App extends React.Component {
             dayOfWeek={dateTimeFormat(
               'en-US',
               { weekday: 'long' },
-              unixToDateTime(weather.current.dt)
+              unixToDateTime(weather.daily[index].dt)
             )}
-            weatherCondition={weather.current.weather[0].description}
-            icon={weather.current.weather[0].icon}
-            currentTemp={Math.round(weather.current.temp)}
-            highTemp={Math.round(
-              weather.daily[unixToDateTime(weather.current.dt).getDay()].temp
-                .max
-            )}
-            lowTemp={Math.round(
-              weather.daily[unixToDateTime(weather.current.dt).getDay()].temp
-                .min
-            )}
-            precipitation={
-              weather.daily[unixToDateTime(weather.current.dt).getDay()].pop *
-              100
-            }
-            humidity={weather.current.humidity}
-            windSpeed={Math.round(weather.current.wind_speed)}
+            weatherCondition={weather.daily[index].weather[0].description}
+            icon={weather.daily[index].weather[0].icon}
+            currentTemp={Math.round(weather.daily[index].temp.day)}
+            highTemp={Math.round(weather.daily[index].temp.max)}
+            lowTemp={Math.round(weather.daily[index].temp.min)}
+            precipitation={weather.daily[index].pop * 100}
+            humidity={weather.daily[index].humidity}
+            windSpeed={Math.round(weather.daily[index].wind_speed)}
           />
 
           <WeatherForecast
