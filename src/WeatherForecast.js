@@ -12,7 +12,7 @@ const WeatherForecast = ({ forecast }) => (
         key={prop.dt}
         dayOfWeek={dateTimeFormat(
           'en-US',
-          { weekday: 'long' },
+          { weekday: 'short' },
           unixToDateTime(prop.dt)
         )}
         icon={prop.weather[0].icon}
