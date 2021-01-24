@@ -24,10 +24,13 @@ class App extends React.Component {
       location: null,
       // -- INDEX TO UPDATE WEATHER DETAILS,
       // INCLUDING CLICKED COMPONENT,
-      // STARTING WITH DEFAULT OF 0 (CURRENT DAY)
+      // STARTING W/DEFAULT OF 0 (CURRENT DAY)
       index: 0,
+      // -- TEMP UNIT IN 'imperial'/'metric' W/DEFAULT 'imperial'
+      tempUnit: 'imperial',
     };
 
+    this.convertTempUnits = this.convertTempUnits.bind(this);
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
     this.activeClass = this.activeClass.bind(this);
   }
@@ -36,7 +39,8 @@ class App extends React.Component {
     const successGeo = async (pos) => {
       try {
         const { latitude, longitude } = pos.coords;
-        const weather = await getWeatherData(latitude, longitude);
+        const { tempUnit } = this.state;
+        const weather = await getWeatherData(latitude, longitude, tempUnit);
         const location = await getLocation(latitude, longitude);
         this.setState({
           weather,
@@ -54,6 +58,11 @@ class App extends React.Component {
 
   getIndexFromComp(index) {
     this.setState({ index: index });
+  }
+
+  convertTempUnits(e) {
+    const { textContent } = e.target;
+    this.setState({ tempUnit: textContent === 'C' ? 'metric' : 'imperial' });
   }
 
   activeClass(testIndex) {
