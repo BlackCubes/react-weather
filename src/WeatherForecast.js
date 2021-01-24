@@ -11,7 +11,6 @@ const WeatherForecast = ({ forecast, getIndexFromComp }) => {
       e.currentTarget
     );
     getIndexFromComp(clickedIndex);
-    console.log('At WeatherForecast.js: ', clickedIndex);
   };
 
   return (
