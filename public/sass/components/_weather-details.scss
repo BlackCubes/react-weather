@@ -122,11 +122,7 @@
 
   &.active {
     background-color: $color-grayish-blue;
-    background-image: linear-gradient(
-      140deg,
-      $color-grayish-blue,
-      $color-dark-grayish-blue
-    );
+    background-image: linear-gradient(45deg, $color-grayish-blue, #3498db);
   }
 
   &__day {
