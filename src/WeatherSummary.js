@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import WeatherIcon from './WeatherIcon';
+import WeatherTemp from './WeatherTemp';
 
 const WeatherSummary = ({
   dayOfWeek,
@@ -10,6 +11,7 @@ const WeatherSummary = ({
   lowTemp,
   onClick,
   activeClass,
+  units,
 }) => (
   // <div className="weather-summary-wrapper">
   <div
@@ -25,9 +27,13 @@ const WeatherSummary = ({
     </div>
 
     <div className="weather-summary__temp paragraph">
-      <div className="weather-summary__temp-high">{highTemp}</div>
+      <div className="weather-summary__temp-high">
+        <WeatherTemp temp={highTemp} units={units} />
+      </div>
 
-      <div className="weather-summary__temp-low">{lowTemp}</div>
+      <div className="weather-summary__temp-low">
+        <WeatherTemp temp={lowTemp} units={units} />
+      </div>
     </div>
   </div>
   // </div>
@@ -40,10 +46,12 @@ WeatherSummary.propTypes = {
   lowTemp: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired,
   activeClass: PropTypes.string,
+  units: PropTypes.oneOf(['imperial', 'metric']),
 };
 
 WeatherSummary.defaultProps = {
   activeClass: '',
+  units: 'imperial',
 };
 
 export default WeatherSummary;
