@@ -12,19 +12,21 @@
 // }
 .weather-wrapper {
   max-width: 60rem;
-  background-color: $color-light-grayish-blue-1;
+  background-color: rgba($color-light-grayish-blue-1, 0.17);
   background-image: linear-gradient(
     110deg,
-    $color-light-grayish-blue-2,
-    $color-light-grayish-blue-1
+    rgba($color-light-grayish-blue-2, 0.17),
+    rgba($color-light-grayish-blue-1, 0.17)
   );
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
+  border-radius: 2rem;
 }
 
 .weather-details-wrapper {
-  border: 0.2rem solid $color-dark-black-blue;
+  border: 0.2rem solid rgba($color-dark-black-blue, 0.17);
+  border-radius: 2rem;
 }
 
 .weather-forecast-wrapper {
