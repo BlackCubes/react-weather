@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Temperature from './Temperature';
 import WeatherIcon from './WeatherIcon';
+import WeatherTemp from './WeatherTemp';
 
 const WeatherDetails = ({
   location,
@@ -61,7 +61,7 @@ const WeatherDetails = ({
 
           <div className="weather-details__condition-temp">
             <span className="weather-details__condition-temp-value heading-secondary">
-              <Temperature temp={currentTemp} units={units} />
+              <WeatherTemp temp={currentTemp} units={units} />
             </span>
 
             <div className="weather-details__condition-temp-unit book-size">
@@ -90,13 +90,13 @@ const WeatherDetails = ({
         <div className="weather-details__condition--secondary paragraph">
           <div className="weather-details__condition-hightemp">
             High:&nbsp;
-            <Temperature temp={highTemp} units={units} />
+            <WeatherTemp temp={highTemp} units={units} />
             &deg;
           </div>
 
           <div className="weather-details__condition-lowtemp">
             Low:&nbsp;
-            <Temperature temp={lowTemp} units={units} />
+            <WeatherTemp temp={lowTemp} units={units} />
             &deg;
           </div>
 
