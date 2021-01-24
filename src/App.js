@@ -29,6 +29,7 @@ class App extends React.Component {
     };
 
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
+    this.activeClass = this.activeClass.bind(this);
   }
 
   componentDidMount() {
@@ -53,6 +54,11 @@ class App extends React.Component {
 
   getIndexFromComp(index) {
     this.setState({ index: index });
+  }
+
+  activeClass(testIndex) {
+    const { currentIndex } = this.state;
+    return currentIndex === 0 || currentIndex === testIndex ? 'active' : '';
   }
 
   render() {
@@ -116,6 +122,7 @@ class App extends React.Component {
           <WeatherForecast
             forecast={weather.daily}
             getIndexFromComp={this.getIndexFromComp}
+            activeClass={this.activeClass}
           />
         </div>
       )
