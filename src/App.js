@@ -69,16 +69,48 @@ class App extends React.Component {
             dayOfWeek={dateTimeFormat(
               'en-US',
               { weekday: 'long' },
-              unixToDateTime(weather.daily[index].dt)
+              unixToDateTime(
+                index === 0 ? weather.current.dt : weather.daily[index].dt
+              )
             )}
-            weatherCondition={weather.daily[index].weather[0].description}
-            icon={weather.daily[index].weather[0].icon}
-            currentTemp={Math.round(weather.daily[index].temp.day)}
-            highTemp={Math.round(weather.daily[index].temp.max)}
-            lowTemp={Math.round(weather.daily[index].temp.min)}
-            precipitation={weather.daily[index].pop * 100}
-            humidity={weather.daily[index].humidity}
-            windSpeed={Math.round(weather.daily[index].wind_speed)}
+            weatherCondition={
+              index === 0
+                ? weather.current.weather[0].description
+                : weather.daily[index].weather[0].description
+            }
+            icon={
+              index === 0
+                ? weather.current.weather[0].icon
+                : weather.daily[index].weather[0].icon
+            }
+            currentTemp={Math.round(
+              index === 0 ? weather.current.temp : weather.daily[index].temp.day
+            )}
+            highTemp={Math.round(
+              index === 0
+                ? weather.daily[0].temp.max
+                : weather.daily[index].temp.max
+            )}
+            lowTemp={Math.round(
+              index === 0
+                ? weather.daily[0].temp.min
+                : weather.daily[index].temp.min
+            )}
+            precipitation={
+              index === 0
+                ? weather.daily[0].pop * 100
+                : weather.daily[index].pop * 100
+            }
+            humidity={
+              index === 0
+                ? weather.current.humidity
+                : weather.daily[index].humidity
+            }
+            windSpeed={Math.round(
+              index === 0
+                ? weather.current.wind_speed
+                : weather.daily[index].wind_speed
+            )}
           />
 
           <WeatherForecast
