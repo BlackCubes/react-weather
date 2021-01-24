@@ -151,7 +151,11 @@
 
   &.active {
     background-color: $color-grayish-blue;
-    background-image: linear-gradient(45deg, $color-grayish-blue, #3498db);
+    background-image: linear-gradient(
+      45deg,
+      rgba($color-grayish-blue, 0.11),
+      rgba($color-bright-blue, 0.11)
+    );
     border: none;
   }
 
