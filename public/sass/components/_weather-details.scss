@@ -159,11 +159,15 @@
     border: none;
 
     > .weather-summary__day {
-      font-size: 1.75rem;
+      font-size: 1.45rem;
+    }
+
+    > .weather-summary__icon {
+      width: 89%;
     }
 
     > .weather-summary__temp {
-      font-size: 1.75rem;
+      font-size: 1.45rem;
     }
   }
 
