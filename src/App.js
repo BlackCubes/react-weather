@@ -58,7 +58,7 @@ class App extends React.Component {
 
   activeClass(testIndex) {
     const { index } = this.state;
-    return index === 0 || index === testIndex ? 'active' : '';
+    return index === testIndex ? 'active' : '';
   }
 
   render() {
