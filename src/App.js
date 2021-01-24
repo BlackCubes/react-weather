@@ -22,9 +22,10 @@ class App extends React.Component {
       // -- API
       weather: null,
       location: null,
-      // -- INDEX OF CLICKED COMPONENT TO UPDATE WEATHER DETAILS
+      // -- INDEX TO UPDATE WEATHER DETAILS,
+      // INCLUDING CLICKED COMPONENT,
       // STARTING WITH DEFAULT OF 0 (CURRENT DAY)
-      compClickedIndex: 0,
+      index: 0,
     };
 
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
@@ -51,18 +52,12 @@ class App extends React.Component {
   }
 
   getIndexFromComp(index) {
-    this.setState({ compClickedIndex: index });
+    this.setState({ index: index });
   }
 
   render() {
-    const {
-      isLoading,
-      error,
-      weather,
-      location,
-      compClickedIndex,
-    } = this.state;
-    console.log('At App.js: ', compClickedIndex);
+    const { isLoading, error, weather, location, index } = this.state;
+    console.log('At App.js: ', index);
 
     const renderedContent = error ? (
       <>{error}</>
