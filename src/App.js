@@ -2,6 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import SearchBar from './SearchBar';
 import WeatherDetails from './WeatherDetails';
 import WeatherForecast from './WeatherForecast';
 
@@ -105,6 +106,7 @@ class App extends React.Component {
     ) : (
       weather && (
         <div className="weather-wrapper">
+          <SearchBar onSubmit={this.onSubmit} />
           <WeatherDetails
             location={location}
             dayOfWeek={dateTimeFormat(
