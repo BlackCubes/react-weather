@@ -106,7 +106,7 @@ class App extends React.Component {
     ) : (
       weather && (
         <div className="weather-wrapper">
-          <SearchBar onSubmit={this.onSubmit} />
+          <SearchBar onSubmit={this.onSubmit} search={search} />
           <WeatherDetails
             location={location}
             dayOfWeek={dateTimeFormat(
