@@ -28,8 +28,10 @@ class App extends React.Component {
       index: 0,
       // -- TEMP UNIT IN 'imperial'/'metric' W/DEFAULT 'imperial'
       tempUnit: 'imperial',
+      search: '',
     };
 
+    this.onSubmit = this.onSubmit.bind(this);
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
     this.convertTempUnits = this.convertTempUnits.bind(this);
     this.activeClass = this.activeClass.bind(this);
@@ -55,6 +57,16 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    const [target] = e;
+    const [value, name] = target;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
   getIndexFromComp(index) {
     this.setState({ index: index });
   }
@@ -76,7 +88,17 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, error, weather, location, index, tempUnit } = this.state;
+    const {
+      isLoading,
+      error,
+      weather,
+      location,
+      index,
+      tempUnit,
+      search,
+    } = this.state;
+
+    console.log(search);
 
     const renderedContent = error ? (
       <>{error}</>
