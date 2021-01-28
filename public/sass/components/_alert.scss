@@ -16,21 +16,6 @@
   -webkit-box-shadow: 0 2rem 4rem rgba($color-black, 0.25);
   box-shadow: 0 2rem 4rem rgba($color-black, 0.25);
 
-  // @include respond(tab-port) {
-  //   font-size: 1.8rem;
-  //   width: 50vw;
-  // }
-
-  // @include respond(tab-land) {
-  //   font-size: 2rem;
-  //   width: 60vh;
-  // }
-
-  // @include respond(desktop) {
-  //   font-size: 1.6rem;
-  //   width: 35rem;
-  // }
-
   &--error {
     background-color: $color-red;
   }
