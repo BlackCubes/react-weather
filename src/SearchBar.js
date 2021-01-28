@@ -33,19 +33,16 @@ class SearchBar extends React.Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="form__group-wrapper">
             <div className="form__group">
-              <input
-                type="text"
-                name="location"
-                className="form__input input-text"
-                id="searchInput"
-                value={location}
-                placeholder="City Name"
-                onChange={this.handleChange}
-              />
-              <>
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              </>
               <label className="form__label label-text" htmlFor="searchInput">
+                <input
+                  type="text"
+                  name="location"
+                  className="form__input input-text"
+                  id="searchInput"
+                  value={location}
+                  placeholder="City Name"
+                  onChange={this.handleChange}
+                />
                 Winter is coming...
               </label>
             </div>
