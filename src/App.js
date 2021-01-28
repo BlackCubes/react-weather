@@ -24,16 +24,17 @@ class App extends React.Component {
       // -- API
       weather: null,
       location: null,
+      // newLocation: null,
       // -- INDEX TO UPDATE WEATHER DETAILS,
       // INCLUDING CLICKED COMPONENT,
       // STARTING W/DEFAULT OF 0 (CURRENT DAY)
       index: 0,
       // -- TEMP UNIT IN 'imperial'/'metric' W/DEFAULT 'imperial'
       tempUnit: 'imperial',
-      geoLatLon: null,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
+    this.getNewWeatherData = this.getNewWeatherData.bind(this);
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
     this.convertTempUnits = this.convertTempUnits.bind(this);
     this.activeClass = this.activeClass.bind(this);
@@ -42,8 +43,7 @@ class App extends React.Component {
   componentDidMount() {
     const successGeo = async (pos) => {
       try {
-        const { geoLatLon } = this.state;
-        const { latitude, longitude } = !geoLatLon ? pos.coords : geoLatLon;
+        const { latitude, longitude } = pos.coords;
         const weather = await getWeatherData(latitude, longitude);
         const location = await getLocation(latitude, longitude);
         this.setState({
@@ -60,14 +60,24 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
-  async onSubmit(newLocation) {
+  componentDidUpdate(prevProps, prevState) {
+    const { location } = this.state;
+    if (prevState.location !== location) this.getNewWeatherData(location);
+  }
+
+  onSubmit(newLocation) {
+    this.setState({ location: newLocation });
+  }
+
+  async getNewWeatherData(location) {
     try {
-      const { lat, lng } = await getCoordinates(newLocation);
+      const { lat, lng } = await getCoordinates(location);
+      const weather = await getWeatherData(lat, lng);
       this.setState({
-        geoLatLon: { latitude: lat, longitude: lng },
+        weather,
       });
     } catch (err) {
-      console.log('onSubmit error: ', err);
+      this.setState({ error: err.message });
     }
   }
 
@@ -92,16 +102,7 @@ class App extends React.Component {
   }
 
   render() {
-    const {
-      isLoading,
-      error,
-      weather,
-      location,
-      index,
-      tempUnit,
-      geoLatLon,
-    } = this.state;
-    console.log('newLocation: ', geoLatLon);
+    const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = error ? (
       <>{error}</>
