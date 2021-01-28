@@ -29,10 +29,10 @@ class App extends React.Component {
       index: 0,
       // -- TEMP UNIT IN 'imperial'/'metric' W/DEFAULT 'imperial'
       tempUnit: 'imperial',
-      // search: '',
+      newLocation: '',
     };
 
-    // this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.getIndexFromComp = this.getIndexFromComp.bind(this);
     this.convertTempUnits = this.convertTempUnits.bind(this);
     this.activeClass = this.activeClass.bind(this);
@@ -58,15 +58,9 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
-  // onSubmit(e) {
-  //   e.preventDefault();
-  //   const [target] = e;
-  //   const [value, name] = target;
-
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // }
+  onSubmit(newLocation) {
+    this.setState({ newLocation });
+  }
 
   getIndexFromComp(index) {
     this.setState({ index: index });
@@ -89,14 +83,23 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, error, weather, location, index, tempUnit } = this.state;
+    const {
+      isLoading,
+      error,
+      weather,
+      location,
+      index,
+      tempUnit,
+      newLocation,
+    } = this.state;
+    console.log('newLocation: ', newLocation);
 
     const renderedContent = error ? (
       <>{error}</>
     ) : (
       weather && (
         <div className="weather-wrapper">
-          <SearchBar />
+          <SearchBar onSubmit={this.onSubmit} />
           <WeatherDetails
             location={location}
             dayOfWeek={dateTimeFormat(
