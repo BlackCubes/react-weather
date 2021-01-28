@@ -1,21 +1,22 @@
 .form {
   &__group-wrapper {
     display: flex;
+    justify-content: space-between;
   }
 
-  &__group {
-    margin-bottom: 1rem;
-  }
+  // &__group {
+  //   margin-bottom: 1rem;
+  // }
 
   &__input {
     display: block;
-    width: 95%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem;
     border: none;
     border-bottom: 0.3rem solid transparent;
-    border-radius: 0.2rem;
+    border-radius: 1rem;
     transition: all 0.3s;
 
     &:focus {
@@ -34,9 +35,9 @@
 
   &__label {
     display: block;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    margin-top: 0.7rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
     text-align: left;
     transition: all 0.3s;
   }
