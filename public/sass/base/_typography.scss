@@ -26,3 +26,16 @@ body {
 .book-size {
   font-size: $font-size-book;
 }
+
+.input-text {
+  font-family: inherit;
+  font-size: $default-font-size;
+  color: $color-dark-black-blue;
+  background-color: rgba($color-white, 0.3);
+}
+
+.label-text {
+  font-size: $font-size-book;
+  font-weight: 700;
+  color: $color-bright-blue;
+}
