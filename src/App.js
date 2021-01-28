@@ -7,6 +7,7 @@ import WeatherDetails from './WeatherDetails';
 import WeatherForecast from './WeatherForecast';
 
 import {
+  getCoordinates,
   getLocation,
   getWeatherData,
   unixToDateTime,
@@ -29,7 +30,7 @@ class App extends React.Component {
       index: 0,
       // -- TEMP UNIT IN 'imperial'/'metric' W/DEFAULT 'imperial'
       tempUnit: 'imperial',
-      newLocation: '',
+      geoLatLon: null,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -58,8 +59,15 @@ class App extends React.Component {
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
-  onSubmit(newLocation) {
-    this.setState({ newLocation });
+  async onSubmit(newLocation) {
+    try {
+      const { lat, lng } = await getCoordinates(newLocation);
+      this.setState({
+        geoLatLon: { latitude: lat, longitude: lng },
+      });
+    } catch (err) {
+      console.log('onSubmit error: ', err);
+    }
   }
 
   getIndexFromComp(index) {
@@ -90,9 +98,9 @@ class App extends React.Component {
       location,
       index,
       tempUnit,
-      newLocation,
+      geoLatLon,
     } = this.state;
-    console.log('newLocation: ', newLocation);
+    console.log('newLocation: ', geoLatLon);
 
     const renderedContent = error ? (
       <>{error}</>
