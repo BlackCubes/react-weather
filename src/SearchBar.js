@@ -51,7 +51,7 @@ class SearchBar extends React.Component {
 
             <div className="form__group">
               <button className="btn" type="submit">
-                <FontAwesomeIcon icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} className="btn-icon" />
               </button>
             </div>
           </div>
