@@ -31,6 +31,10 @@
     &::-webkit-input-placeholder {
       color: $color-dark-grayish-blue;
     }
+
+    &.error {
+      border-bottom: 0.3rem solid $color-red;
+    }
   }
 
   &__label {
@@ -50,5 +54,15 @@
 
   &__input:focus:invalid + &__label {
     color: $color-red;
+  }
+
+  &__input.error + &__label {
+    color: $color-red;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
   }
 }
