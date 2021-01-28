@@ -61,11 +61,13 @@ class App extends React.Component {
         });
       }
     };
-    const errorGeo = (err) =>
+    const errorGeo = (err) => {
+      console.log(err.message);
       this.setState({
         error: `An error has occured. Try again or contact the system admin. Status code: ${err.status}`,
         isLoading: false,
       });
+    };
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
