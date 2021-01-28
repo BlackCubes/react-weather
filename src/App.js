@@ -42,7 +42,8 @@ class App extends React.Component {
   componentDidMount() {
     const successGeo = async (pos) => {
       try {
-        const { latitude, longitude } = pos.coords;
+        const { geoLatLon } = this.state;
+        const { latitude, longitude } = !geoLatLon ? pos.coords : geoLatLon;
         const weather = await getWeatherData(latitude, longitude);
         const location = await getLocation(latitude, longitude);
         this.setState({
