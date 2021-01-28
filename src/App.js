@@ -105,7 +105,7 @@ class App extends React.Component {
     const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = error ? (
-      <div className="heading-secondary error">{error}</div>
+      <div className="paragraph error">{error}</div>
     ) : (
       weather && (
         // <div className="weather-wrapper">

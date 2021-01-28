@@ -17,14 +17,15 @@ body {
   font-size: $font-size-secondary;
   color: $color-dark-desaturated-blue-2;
   font-weight: 600;
-
-  &.error {
-    color: $color-red;
-  }
 }
 
 .paragraph {
   font-size: $default-font-size;
+
+  &.error {
+    color: $color-red;
+    font-weight: 600;
+  }
 }
 
 .book-size {
