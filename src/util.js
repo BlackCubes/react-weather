@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { showAlert } from './alert';
+// import { showAlert } from './alert';
 
 // API
 export const getCoordinates = async (location) => {
