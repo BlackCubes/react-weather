@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -49,7 +51,7 @@ class SearchBar extends React.Component {
 
             <div className="form__group">
               <button className="btn" type="submit">
-                Search
+                <FontAwesomeIcon icon={faSearch} />
               </button>
             </div>
           </div>
