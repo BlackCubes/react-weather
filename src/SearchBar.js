@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { location } = this.state;
-    console.log(location);
+    const { onSubmit } = this.props;
+    onSubmit(location);
   }
 
   handleChange(e) {
@@ -39,5 +41,9 @@ class SearchBar extends React.Component {
     );
   }
 }
+
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default SearchBar;
