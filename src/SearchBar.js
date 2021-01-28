@@ -1,22 +1,43 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const SearchBar = ({ onSubmit, search }) => (
-  <form>
-    <input
-      type="text"
-      name="search"
-      value={search}
-      placeholder="City Name"
-      onSubmit={onSubmit}
-    />
-    <input type="submit" value="Search" />
-  </form>
-);
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      location: '',
+    };
 
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  search: PropTypes.string.isRequired,
-};
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { location } = this.state;
+    console.log(location);
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  render() {
+    const { location } = this.state;
+
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          typp="text"
+          name="location"
+          value={location}
+          placeholder="City Name"
+          handleChange={this.handleChange}
+        />
+        <button type="submit">Search</button>
+      </form>
+    );
+  }
+}
 
 export default SearchBar;
