@@ -105,10 +105,11 @@ class App extends React.Component {
     const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = error ? (
-      <>{error}</>
+      <div className="heading-secondary error">{error}</div>
     ) : (
       weather && (
-        <div className="weather-wrapper">
+        // <div className="weather-wrapper">
+        <>
           <SearchBar onSubmit={this.onSubmit} />
           <WeatherDetails
             location={location}
@@ -167,11 +168,21 @@ class App extends React.Component {
             activeClass={this.activeClass}
             units={tempUnit}
           />
-        </div>
+        </>
       )
     );
 
-    return <main>{isLoading ? <div>Loading...</div> : renderedContent}</main>;
+    return (
+      <main>
+        <div className="weather-wrapper">
+          {isLoading ? (
+            <div className="heading-secondary">Loading...</div>
+          ) : (
+            renderedContent
+          )}
+        </div>
+      </main>
+    );
   }
 }
 
