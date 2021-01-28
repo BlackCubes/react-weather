@@ -29,17 +29,35 @@ class SearchBar extends React.Component {
     const { location } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          name="location"
-          id="searchInput"
-          value={location}
-          placeholder="City Name"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <div className="search-bar">
+        <form className="form" onSubmit={this.handleSubmit}>
+          <div className="form__group-wrapper">
+            <div className="form__group">
+              <input
+                type="text"
+                name="location"
+                className="form__input input-text"
+                id="searchInput"
+                value={location}
+                placeholder="City Name"
+                onChange={this.handleChange}
+              />
+              <>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+              </>
+              <label className="form__label label-text" htmlFor="searchInput">
+                Winter is coming...
+              </label>
+            </div>
+
+            <div className="form__group">
+              <button className="btn" type="submit">
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     );
   }
 }
