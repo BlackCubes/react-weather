@@ -31,12 +31,6 @@ export const getWeatherData = async (lat, lon) => {
   }
 };
 
-// SDK
-placeSearch({
-  key: process.env.REACT_APP_MAPQUEST_API,
-  container: document.getElementById('searchInput'),
-});
-
 // DATETIME
 export const unixToDateTime = (unix) => new Date(unix * 1000);
 
