@@ -2,6 +2,8 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
+import { showAlert } from './alert';
+
 import SearchBar from './SearchBar';
 import WeatherDetails from './WeatherDetails';
 import WeatherForecast from './WeatherForecast';
@@ -52,11 +54,18 @@ class App extends React.Component {
           isLoading: false,
         });
       } catch (err) {
-        this.setState({ error: err.message, isLoading: false });
+        this.setState({
+          error:
+            'There was an error getting the weather. Try again or contact the system admin.',
+          isLoading: false,
+        });
       }
     };
     const errorGeo = (err) =>
-      this.setState({ error: err.message, isLoading: false });
+      this.setState({
+        error: 'An error has occured. Try again or contact the system admin.',
+        isLoading: false,
+      });
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
 
@@ -77,7 +86,11 @@ class App extends React.Component {
         weather,
       });
     } catch (err) {
-      this.setState({ error: err.message });
+      // this.setState({ error: err.message });
+      showAlert(
+        'error',
+        'There was an error getting the weather or coordinates. Try again or contact the system admin.'
+      );
     }
   }
 
