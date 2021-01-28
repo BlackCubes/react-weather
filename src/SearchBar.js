@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
           name="location"
           value={location}
           placeholder="City Name"
-          handleChange={this.handleChange}
+          onChange={this.handleChange}
         />
         <button type="submit">Search</button>
       </form>
