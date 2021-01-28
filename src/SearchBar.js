@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="form__group-wrapper">
             <div className="form__group">
-              <label className="form__label label-text" htmlFor="searchInput">
+              <label htmlFor="searchInput">
                 <input
                   type="text"
                   name="location"
@@ -45,7 +45,9 @@ class SearchBar extends React.Component {
                   placeholder="City Name"
                   onChange={this.handleChange}
                 />
-                Winter is coming...
+                <span className="form__label label-text">
+                  Winter is coming...
+                </span>
               </label>
             </div>
 
