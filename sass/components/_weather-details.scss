@@ -1,0 +1,213 @@
+// .weather-details-wrapper {
+//   max-width: 60rem;
+//   background-color: $color-light-grayish-blue-1;
+//   background-image: linear-gradient(
+//     110deg,
+//     $color-light-grayish-blue-2,
+//     $color-light-grayish-blue-1
+//   );
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 1rem;
+// }
+.weather-wrapper {
+  max-width: 60rem;
+  background-color: rgba($color-light-grayish-blue-1, 0.17);
+  background-image: linear-gradient(
+    110deg,
+    rgba($color-light-grayish-blue-2, 0.17),
+    rgba($color-light-grayish-blue-1, 0.17)
+  );
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.weather-details-wrapper {
+  background-color: $color-grayish-blue;
+  background-image: linear-gradient(
+    140deg,
+    $color-dark-grayish-blue,
+    $color-grayish-blue
+  );
+  border: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  border-radius: 2rem;
+}
+
+.weather-forecast-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0.2rem;
+  margin-top: 1rem;
+}
+
+// .weather-details-wrapper,
+// .weather-forecast-wrapper {
+//   background-color: $color-grayish-blue;
+//   background-image: linear-gradient(
+//     140deg,
+//     $color-dark-grayish-blue,
+//     $color-grayish-blue
+//   );
+// }
+
+.weather-details {
+  // background-color: $color-grayish-blue;
+  // background-image: linear-gradient(
+  //   140deg,
+  //   $color-dark-grayish-blue,
+  //   $color-grayish-blue
+  // );
+
+  &__header {
+    padding: 1rem;
+
+    // &-location {
+    //   font-size: 3rem;
+    //   font-weight: 600;
+    // }
+
+    // &-day {
+    //   font-size: 1.6rem;
+    // }
+
+    &-weather {
+      text-transform: capitalize;
+    }
+  }
+
+  &__condition {
+    display: flex;
+    padding: 1rem;
+
+    &--primary {
+      display: flex;
+      width: 75%;
+    }
+
+    &-icon {
+      // padding: 1rem;
+      width: 5rem;
+
+      & > img {
+        width: 100%;
+      }
+    }
+
+    &-temp {
+      display: flex;
+      padding: 0.5rem;
+
+      // &-value {
+      //   font-size: 3rem;
+      //   font-weight: 600;
+      // }
+
+      &-unit {
+        // font-size: 1.2rem;
+        margin-top: 0.5rem;
+        margin-left: 0.3rem;
+
+        & > span::before {
+          content: '\00b0';
+        }
+
+        & > .active {
+          color: lightblue;
+        }
+
+        & > span:not(.active) {
+          cursor: pointer;
+        }
+      }
+    }
+
+    // &--secondary {
+    //   font-size: 1.6rem;
+    // }
+  }
+}
+
+.weather-summary {
+  background-color: $color-grayish-blue;
+  background-image: linear-gradient(
+    140deg,
+    $color-dark-grayish-blue,
+    $color-grayish-blue
+  );
+  border: 0.2rem solid rgba($color-dark-black-blue, 0.01);
+  // border-top: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // border-bottom: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // border-right: 0.1rem solid rgba($color-dark-black-blue, 0.11);
+  border-radius: 2rem;
+
+  // &:first-child {
+  //   border-left: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // }
+  // &:last-child {
+  //   border-right: 0.2rem solid rgba($color-dark-black-blue, 0.11);
+  // }
+
+  &.active {
+    background-color: rgba($color-grayish-blue, 0.7);
+    background-image: linear-gradient(
+      45deg,
+      rgba($color-grayish-blue, 0.7),
+      rgba($color-bright-blue, 0.7)
+    );
+    border-top: 0.1rem solid rgba($color-dark-black-blue, 0.17);
+    border-bottom: 0.1rem solid rgba($color-dark-black-blue, 0.17);
+    border-left: none;
+    border-right: none;
+
+    > .weather-summary__day {
+      font-size: 1.55rem;
+      color: rgba($color-dark-desaturated-blue-1, 0.6);
+    }
+
+    > .weather-summary__icon {
+      width: 89%;
+      opacity: 0.6;
+    }
+
+    > .weather-summary__temp {
+      font-size: 1.55rem;
+      color: rgba($color-dark-desaturated-blue-1, 0.6);
+    }
+  }
+
+  &:not(.active) {
+    cursor: pointer;
+  }
+
+  &__day {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &__icon {
+    width: 91%;
+    margin-left: auto;
+    margin-right: auto;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__temp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+    &-high {
+      margin-right: 1rem;
+    }
+
+    &-high::after,
+    &-low::after {
+      content: '\00b0';
+    }
+  }
+}

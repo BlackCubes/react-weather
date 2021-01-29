@@ -1,0 +1,12 @@
+// DESKTOP FIRST @ NORMAL 1200px - 1800px
+
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/base';
+@import 'base/typography';
+
+@import 'components/alert';
+@import 'components/button';
+@import 'components/form';
+@import 'components/weather-details';

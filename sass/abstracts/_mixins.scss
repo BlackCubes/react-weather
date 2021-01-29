@@ -1,0 +1,16 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+[1200px - 1800px] the normal style in use (Desktop-First @ Max-Width 1800px)
+
+$breakpoint argument choices:
+
+1em = 16px
+*/

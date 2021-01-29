@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  // Defines what 1rem is i.e. 1rem=10px -> 10/16 = 62.5%
+  font-size: 62.5%;
+}
+
+main {
+  margin-top: 3.7rem;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #3498db;
+  background-image: linear-gradient(
+    45deg,
+    #f8c471,
+    #3498db,
+    $color-dark-desaturated-blue-1
+  );
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: $color-bright-blue;
+  color: $color-black;
+}
