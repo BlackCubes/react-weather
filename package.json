@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
+    "autoprefixer": "^9.0.0",
     "concat": "^1.0.3",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
