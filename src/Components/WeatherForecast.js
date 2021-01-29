@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import WeatherSummary from './WeatherSummary';
 
-import { unixToDateTime, dateTimeFormat } from './util';
+import { unixToDateTime, dateTimeFormat } from '../utils/util';
 
 const WeatherForecast = ({
   forecast,

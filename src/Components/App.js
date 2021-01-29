@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import { showAlert } from './alert';
+import { showAlert } from '../utils/alert';
 
 import SearchBar from './SearchBar';
 import WeatherDetails from './WeatherDetails';
@@ -14,7 +14,7 @@ import {
   getWeatherData,
   unixToDateTime,
   dateTimeFormat,
-} from './util';
+} from '../utils/util';
 
 class App extends React.Component {
   constructor(props) {
