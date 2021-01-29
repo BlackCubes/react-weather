@@ -4,7 +4,7 @@ import axios from 'axios';
 // API
 export const getCoordinates = async (location) => {
   try {
-    const apiUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAPQUEST_API}&location=${location}`;
+    const apiUrl = `https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAPQUEST_API}&location=${location}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data.results[0].locations[0].latLng;
   } catch (err) {
@@ -15,7 +15,7 @@ export const getCoordinates = async (location) => {
 
 export const getLocation = async (lat, lon) => {
   try {
-    const apiUrl = `http://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAPQUEST_API}&location=${lat},${lon}`;
+    const apiUrl = `https://www.mapquestapi.com/geocoding/v1/reverse?key=${process.env.REACT_APP_MAPQUEST_API}&location=${lat},${lon}`;
     const res = await axios.get(apiUrl);
     if (res.status === 200) return res.data.results[0].locations[0].adminArea5;
   } catch (err) {
