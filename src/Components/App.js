@@ -22,6 +22,7 @@ class App extends React.Component {
       // -- UI/API LOADING/ERROR
       isLoading: true,
       error: null,
+      errorType: '',
       // -- API
       weather: null,
       location: null,
@@ -56,6 +57,7 @@ class App extends React.Component {
         this.setState({
           error:
             'There was an error getting the weather. Try again or contact the system admin.',
+          errorType: 'red',
           isLoading: false,
         });
         setTimeout(() => this.setState({ error: null }), 5000);
@@ -65,6 +67,7 @@ class App extends React.Component {
       console.log(err.message);
       this.setState({
         error: 'Unable to retrieve your location.',
+        errorType: 'warning',
         isLoading: false,
       });
       setTimeout(() => this.setState({ error: null }), 5000);
@@ -92,6 +95,7 @@ class App extends React.Component {
       this.setState({
         error:
           'There was an error getting the weather or coordinates. Try again or contact the system admin.',
+        errorType: 'red',
       });
       setTimeout(() => this.setState({ error: null }), 5000);
     }
@@ -118,11 +122,19 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, error, weather, location, index, tempUnit } = this.state;
+    const {
+      isLoading,
+      error,
+      errorType,
+      weather,
+      location,
+      index,
+      tempUnit,
+    } = this.state;
 
     const renderedContent = weather ? (
       <>
-        {error && <Alert message={error} type="error" />}
+        {error && <Alert message={error} type={errorType} />}
         <SearchBar onSubmit={this.onSubmit} />
         <WeatherDetails
           location={location}
@@ -184,7 +196,7 @@ class App extends React.Component {
       </>
     ) : (
       <>
-        {error && <Alert message={error} type="error" />}
+        {error && <Alert message={error} type={errorType} />}
         <SearchBar onSubmit={this.onSubmit} />
       </>
     );
