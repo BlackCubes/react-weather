@@ -45,13 +45,14 @@ class SearchBar extends React.Component {
     const { errors } = this.state;
     let { errorClass } = this.state;
 
-    errors.location =
-      value.length < 3 ? 'Must be a minimum of 3 characters.' : '';
-    errors.location =
-      value.length > 91 ? 'Must be less than 90 characters.' : '';
-    errors.location = !regexUnicode.test(value) ? 'Must be a valid city.' : '';
-    errorClass = errors.location.length > 0 ? 'error' : '';
+    if (value.length < 3)
+      errors.location = 'Must be a minimum of 3 characters.';
+    else if (value.length > 91)
+      errors.location = 'Must be 90 characters or less.';
+    else if (!regexUnicode.test(value))
+      errors.location = 'Must be a valid city.';
 
+    errorClass = errors.location.length > 0 ? 'error' : '';
     this.setState({ [name]: value, errors, errorClass });
   }
 
