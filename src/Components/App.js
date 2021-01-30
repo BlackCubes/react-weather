@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 import Alert from '../utils/Alert';
@@ -59,6 +58,7 @@ class App extends React.Component {
             'There was an error getting the weather. Try again or contact the system admin.',
           isLoading: false,
         });
+        setTimeout(() => this.setState({ error: null }), 5000);
       }
     };
     const errorGeo = (err) => {
@@ -67,6 +67,7 @@ class App extends React.Component {
         error: `An error has occured. Try again or contact the system admin.`,
         isLoading: false,
       });
+      setTimeout(() => this.setState({ error: null }), 5000);
     };
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
@@ -120,7 +121,6 @@ class App extends React.Component {
     const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = weather && (
-      // <div className="weather-wrapper">
       <>
         {error && <Alert message={error} type="error" />}
         <SearchBar onSubmit={this.onSubmit} />
