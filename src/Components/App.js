@@ -120,7 +120,7 @@ class App extends React.Component {
   render() {
     const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
-    const renderedContent = weather && (
+    const renderedContent = weather ? (
       <>
         {error && <Alert message={error} type="error" />}
         <SearchBar onSubmit={this.onSubmit} />
@@ -181,6 +181,11 @@ class App extends React.Component {
           activeClass={this.activeClass}
           units={tempUnit}
         />
+      </>
+    ) : (
+      <>
+        {error && <Alert message={error} type="error" />}
+        <SearchBar onSubmit={this.onSubmit} />
       </>
     );
 
