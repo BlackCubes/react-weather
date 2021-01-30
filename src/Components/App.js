@@ -64,7 +64,7 @@ class App extends React.Component {
     const errorGeo = (err) => {
       console.log(err.message);
       this.setState({
-        error: `An error has occured. Try again or contact the system admin.`,
+        error: 'Unable to retrieve your location.',
         isLoading: false,
       });
       setTimeout(() => this.setState({ error: null }), 5000);
