@@ -14,10 +14,7 @@ import PropTypes from 'prop-types';
 // };
 
 const Alert = ({ message, type }) => {
-  let styleDisplay = 'block';
-  setTimeout(() => {
-    styleDisplay = 'none';
-  }, 5000);
+  const styleDisplay = message ? 'block' : 'none';
   return (
     <div className={`alert alert--${type}`} style={{ display: styleDisplay }}>
       {message}
