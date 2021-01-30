@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-import { showAlert } from '../utils/alert';
+import Alert from '../utils/Alert';
 
 import SearchBar from './SearchBar';
 import WeatherDetails from './WeatherDetails';
@@ -64,7 +64,7 @@ class App extends React.Component {
     const errorGeo = (err) => {
       console.log(err.message);
       this.setState({
-        error: `An error has occured. Try again or contact the system admin. Status code: ${err.status}`,
+        error: `An error has occured. Try again or contact the system admin.`,
         isLoading: false,
       });
     };
@@ -88,11 +88,14 @@ class App extends React.Component {
         weather,
       });
     } catch (err) {
-      // this.setState({ error: err.message });
-      showAlert(
-        'error',
-        'There was an error getting the weather or coordinates. Try again or contact the system admin.'
-      );
+      this.setState({
+        error:
+          'There was an error getting the weather or coordinates. Try again or contact the system admin.',
+      });
+      // showAlert(
+      //   'error',
+      //   'There was an error getting the weather or coordinates. Try again or contact the system admin.'
+      // );
     }
   }
 
@@ -120,7 +123,8 @@ class App extends React.Component {
     const { isLoading, error, weather, location, index, tempUnit } = this.state;
 
     const renderedContent = error ? (
-      <div className="paragraph error">{error}</div>
+      // <div className="paragraph error">{error}</div>
+      <Alert message={error} type="error" />
     ) : (
       weather && (
         // <div className="weather-wrapper">
