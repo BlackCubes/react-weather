@@ -92,7 +92,7 @@ class App extends React.Component {
         error:
           'There was an error getting the weather or coordinates. Try again or contact the system admin.',
       });
-      setTimeout(() => this.setState({ error: null }));
+      setTimeout(() => this.setState({ error: null }), 5000);
     }
   }
 
