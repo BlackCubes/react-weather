@@ -97,6 +97,9 @@ class SearchBar extends React.Component {
                 className="btn"
                 type="submit"
                 disabled={errors.location.length > 0}
+                style={
+                  errors.location.length > 0 ? { cursor: 'not-allowed' } : ''
+                }
               >
                 <FontAwesomeIcon icon={faSearch} className="btn-icon" />
               </button>
