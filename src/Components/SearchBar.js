@@ -51,6 +51,7 @@ class SearchBar extends React.Component {
       errors.location = 'Must be 90 characters or less.';
     else if (!regexUnicode.test(value))
       errors.location = 'Must be a valid city.';
+    else errors.location = '';
 
     errorClass = errors.location.length > 0 ? 'error' : '';
     this.setState({ [name]: value, errors, errorClass });
