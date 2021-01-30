@@ -60,7 +60,7 @@ class App extends React.Component {
           errorType: 'error',
           isLoading: false,
         });
-        setTimeout(() => this.setState({ error: null }), 5000);
+        setTimeout(() => this.setState({ error: null }), 8000);
       }
     };
     const errorGeo = (err) => {
@@ -70,7 +70,7 @@ class App extends React.Component {
         errorType: 'warning',
         isLoading: false,
       });
-      setTimeout(() => this.setState({ error: null }), 5000);
+      setTimeout(() => this.setState({ error: null }), 8000);
     };
     navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   }
@@ -97,7 +97,7 @@ class App extends React.Component {
           'There was an error getting the weather or coordinates. Try again or contact the system admin.',
         errorType: 'error',
       });
-      setTimeout(() => this.setState({ error: null }), 5000);
+      setTimeout(() => this.setState({ error: null }), 8000);
     }
   }
 
