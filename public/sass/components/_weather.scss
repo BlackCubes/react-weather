@@ -102,6 +102,10 @@
       // padding: 1rem;
       width: 5rem;
 
+      @include respond(big-mobile) {
+        width: 4.5rem;
+      }
+
       & > img {
         width: 100%;
       }
@@ -176,16 +180,28 @@
     > .weather-summary__day {
       font-size: 1.55rem;
       color: rgba($color-dark-desaturated-blue-1, 0.6);
+
+      @include respond(big-mobile) {
+        font-size: 1.45rem;
+      }
     }
 
     > .weather-summary__icon {
       width: 89%;
       opacity: 0.6;
+
+      @include respond(big-mobile) {
+        width: 87%;
+      }
     }
 
     > .weather-summary__temp {
       font-size: 1.55rem;
       color: rgba($color-dark-desaturated-blue-1, 0.6);
+
+      @include respond(big-mobile) {
+        font-size: 1.45rem;
+      }
     }
   }
 
@@ -202,6 +218,10 @@
     width: 91%;
     margin-left: auto;
     margin-right: auto;
+
+    @include respond(big-mobile) {
+      width: 89%;
+    }
 
     & > img {
       width: 100%;

@@ -10,6 +10,10 @@ body {
   font-size: $font-size-primary;
   font-weight: 400;
   color: $color-dark-black-blue;
+
+  @include respond(big-mobile) {
+    font-size: 3.5rem;
+  }
 }
 
 .heading-secondary {
@@ -17,10 +21,18 @@ body {
   font-size: $font-size-secondary;
   color: $color-dark-desaturated-blue-2;
   font-weight: 600;
+
+  @include respond(big-mobile) {
+    font-size: 2.5rem;
+  }
 }
 
 .paragraph {
   font-size: $default-font-size;
+
+  @include respond(big-mobile) {
+    font-size: 1.5rem;
+  }
 
   &.error {
     color: $color-red;
@@ -30,6 +42,10 @@ body {
 
 .book-size {
   font-size: $font-size-book;
+
+  @include respond(big-mobile) {
+    font-size: 1.1rem;
+  }
 }
 
 .input-text {
@@ -37,10 +53,18 @@ body {
   font-size: $default-font-size;
   color: $color-dark-black-blue;
   background-color: rgba($color-white, 0.3);
+
+  @include respond(big-mobile) {
+    font-size: 1.5rem;
+  }
 }
 
 .label-text {
   font-size: $font-size-book;
   font-weight: 700;
   color: $color-bright-blue;
+
+  @include respond(big-mobile) {
+    font-size: 1.1rem;
+  }
 }

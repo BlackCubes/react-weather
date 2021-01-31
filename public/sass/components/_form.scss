@@ -19,6 +19,10 @@
     border-radius: 1rem;
     transition: all 0.3s;
 
+    @include respond(big-mobile) {
+      padding: 1.3rem;
+    }
+
     &:focus {
       outline: none;
       border-bottom: 0.3rem solid $color-bright-blue;

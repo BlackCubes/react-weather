@@ -7,7 +7,15 @@
   border-radius: 1rem;
   cursor: pointer;
 
+  @include respond(big-mobile) {
+    padding: 1.2rem 1.8rem;
+  }
+
   &-icon {
     font-size: 2.3rem;
+
+    @include respond(big-mobile) {
+      font-size: 2.1rem;
+    }
   }
 }
