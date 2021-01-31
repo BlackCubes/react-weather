@@ -23,6 +23,10 @@
       padding: 1.3rem;
     }
 
+    @include respond(mobile) {
+      padding: 1rem;
+    }
+
     &:focus {
       outline: none;
       border-bottom: 0.3rem solid $color-bright-blue;

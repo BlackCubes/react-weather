@@ -100,6 +100,10 @@
       @include respond(big-mobile) {
         width: 60%;
       }
+
+      @include respond(mobile) {
+        width: 57%;
+      }
     }
 
     &-icon {
@@ -108,6 +112,10 @@
 
       @include respond(big-mobile) {
         width: 4.5rem;
+      }
+
+      @include respond(mobile) {
+        width: 4rem;
       }
 
       & > img {
@@ -188,6 +196,10 @@
       @include respond(big-mobile) {
         font-size: 1.45rem;
       }
+
+      @include respond(mobile) {
+        font-size: 1.05rem;
+      }
     }
 
     > .weather-summary__icon {
@@ -197,6 +209,10 @@
       @include respond(big-mobile) {
         width: 87%;
       }
+
+      @include respond(mobile) {
+        width: 85%;
+      }
     }
 
     > .weather-summary__temp {
@@ -205,6 +221,10 @@
 
       @include respond(big-mobile) {
         font-size: 1.45rem;
+      }
+
+      @include respond(mobile) {
+        font-size: 1.05rem;
       }
     }
   }
@@ -216,6 +236,10 @@
   &__day {
     text-align: center;
     margin-top: 1rem;
+
+    @include respond(mobile) {
+      font-size: 1.1rem;
+    }
   }
 
   &__icon {
@@ -227,6 +251,10 @@
       width: 89%;
     }
 
+    @include respond(mobile) {
+      width: 87%;
+    }
+
     & > img {
       width: 100%;
     }
@@ -236,6 +264,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 0.5rem;
+
+    @include respond(mobile) {
+      font-size: 1.1rem;
+    }
 
     &-high {
       margin-right: 1rem;
