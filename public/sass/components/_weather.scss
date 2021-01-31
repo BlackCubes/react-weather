@@ -96,6 +96,10 @@
     &--primary {
       display: flex;
       width: 75%;
+
+      @include respond(big-mobile) {
+        width: 65%;
+      }
     }
 
     &-icon {
