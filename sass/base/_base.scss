@@ -13,6 +13,18 @@
 html {
   // Defines what 1rem is i.e. 1rem=10px -> 10/16 = 62.5%
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 68.75%; // 1rem = 11px, 11/16 = 68.75%
+  }
+
+  @include respond(tab-port) {
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+
+  @include respond(mobile) {
+    font-size: 81.25%;
+  }
 }
 
 main {
@@ -22,14 +34,30 @@ main {
 body {
   position: relative;
   min-height: 100vh;
-  background-color: #3498db;
+  background-color: $color-bright-blue;
   background-image: linear-gradient(
     45deg,
-    #f8c471,
-    #3498db,
+    $color-soft-orange,
+    $color-bright-blue,
     $color-dark-desaturated-blue-1
   );
   box-sizing: border-box;
+
+  @include respond(tab-land) {
+    min-height: 100vw;
+  }
+
+  @include respond(port-1199x-992n) {
+    min-height: 100vh;
+  }
+
+  @include respond(port-991x-768n) {
+    min-height: 100vh;
+  }
+
+  @include respond(tab-port) {
+    min-height: 100vh;
+  }
 }
 
 ::selection {
