@@ -20,6 +20,10 @@
     width: 60%;
   }
 
+  @include respond(tab-port) {
+    width: 65%;
+  }
+
   @include respond(big-mobile) {
     width: 70%;
     font-size: 1.5rem;
