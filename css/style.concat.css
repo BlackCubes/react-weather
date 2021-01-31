@@ -351,6 +351,9 @@ body {
   .weather-details__condition--primary {
     display: flex;
     width: 75%; }
+    @media only screen and (max-width: 56.1875em) {
+      .weather-details__condition--primary {
+        width: 68%; } }
     @media only screen and (max-width: 37.4375em) {
       .weather-details__condition--primary {
         width: 60%; } }

@@ -71,6 +71,10 @@
       display: flex;
       width: 75%;
 
+      @include respond(tab-port) {
+        width: 68%;
+      }
+
       @include respond(big-mobile) {
         width: 60%;
       }
