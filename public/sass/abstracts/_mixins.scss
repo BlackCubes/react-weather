@@ -10,11 +10,13 @@
 /*
 [1799px - 1200px] the normal style in use (Desktop-First @ Max-Width 1799px)
 [1199px - 900px] Tablet Landscape (Max-Width 1199px)
-[899px - 600px] Tablet Portrait (Max-width 899px)
+[899px - 600px] Tablet Portrait (Max-Width 899px)
+[599px - 380px] Mobile (Max-Width 599px)
 
 $breapoint argument choices for non-orientation:
  - tab-land
  - tab-port
+ - mobile
 
 $breakpoint argument choices for orientation (tablets/phones):
  - port-991x-768n
@@ -28,6 +30,7 @@ Let 1em = 16px
 MAX-WIDTH
 74.9375em = 1199px
 56.1875em = 899px
+37.4375em = 599px
 
 MAX-WIDTH AND MIN-WIDTH
 61.9375em = 991px (max) AND 48em = 768px (min)
@@ -41,6 +44,11 @@ MAX-WIDTH AND MIN-WIDTH
   }
   @if $breakpoint == tab-port {
     @media only screen and (max-width: 56.1875em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 37.4375em) {
       @content;
     }
   }
