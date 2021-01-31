@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Alert from '../utils/Alert';
+import Alert from './Alert';
 
 import SearchBar from './SearchBar';
 import WeatherDetails from './WeatherDetails';
