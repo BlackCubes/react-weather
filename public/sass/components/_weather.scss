@@ -26,6 +26,14 @@
   @include respond(tab-port) {
     max-width: 50rem;
   }
+
+  @include respond(big-mobile) {
+    max-width: 40rem;
+  }
+
+  @include respond(mobile) {
+    max-width: 30rem;
+  }
 }
 
 .weather-details-wrapper {
