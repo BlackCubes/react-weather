@@ -16,6 +16,10 @@
   -webkit-box-shadow: 0 2rem 4rem rgba($color-black, 0.25);
   box-shadow: 0 2rem 4rem rgba($color-black, 0.25);
 
+  @include respond(tab-land) {
+    width: 60%;
+  }
+
   @include respond(big-mobile) {
     width: 70%;
     font-size: 1.5rem;
