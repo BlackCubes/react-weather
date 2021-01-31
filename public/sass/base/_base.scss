@@ -39,12 +39,16 @@ body {
   );
   box-sizing: border-box;
 
-  @include respond(port-1199x-992n) {
+  @include respond(tab-land) {
     min-height: 100vw;
   }
 
+  @include respond(port-1199x-992n) {
+    min-height: 100vh;
+  }
+
   @include respond(port-991x-768n) {
-    min-height: 100vw;
+    min-height: 100vh;
   }
 }
 
