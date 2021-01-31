@@ -22,6 +22,10 @@
   margin-right: auto;
   padding: 1rem;
   border-radius: 2rem;
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
 }
 
 .weather-details-wrapper {
