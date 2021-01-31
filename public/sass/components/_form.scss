@@ -4,10 +4,6 @@
     justify-content: space-between;
   }
 
-  // &__group {
-  //   margin-bottom: 1rem;
-  // }
-
   &__input {
     display: block;
     width: 100%;
@@ -78,10 +74,4 @@
   &__input.error + &__label {
     color: $color-red;
   }
-
-  // &__input:placeholder-shown + &__label {
-  //   opacity: 0;
-  //   visibility: hidden;
-  //   transform: translateY(-4rem);
-  // }
 }
