@@ -26,6 +26,11 @@
     font-size: 1.3rem;
   }
 
+  @include respond(small-mobile) {
+    width: 80%;
+    font-size: 1.1rem;
+  }
+
   &--error {
     background-color: $color-red;
   }
