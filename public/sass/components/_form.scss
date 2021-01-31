@@ -27,6 +27,12 @@
       padding: 1rem;
     }
 
+    @include respond(small-mobile) {
+      width: 85%;
+      margin-left: 0;
+      padding: 0.9rem;
+    }
+
     &:focus {
       outline: none;
       border-bottom: 0.3rem solid $color-bright-blue;
@@ -52,6 +58,11 @@
     margin-top: 0.5rem;
     text-align: left;
     transition: all 0.3s;
+
+    @include respond(small-mobile) {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
   }
 
   &__input:placeholder-shown + &__label {
