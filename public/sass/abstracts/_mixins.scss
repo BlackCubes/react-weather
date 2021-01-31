@@ -11,14 +11,16 @@
 [1799px - 1200px] the normal style in use (Desktop-First @ Max-Width 1799px)
 [1199px - 900px] Tablet Landscape (Max-Width 1199px)
 [899px - 600px] Tablet Portrait (Max-Width 899px)
-[599px - 380px] Mobile (Max-Width 599px)
+[599px - 480px] Big-Mobile (Max-Width 599px)
+[479px - 380px] Mobile (Max-Width 479px)
 
-$breapoint argument choices for non-orientation:
+$breapoint argument choices for MAX:
  - tab-land
  - tab-port
+ - big-mobile
  - mobile
 
-$breakpoint argument choices for orientation (tablets/phones):
+$breakpoint argument choices for MAX and MIN:
  - port-991x-768n
  - port-1199x-992n
 
@@ -31,6 +33,7 @@ MAX-WIDTH
 74.9375em = 1199px
 56.1875em = 899px
 37.4375em = 599px
+29.9375em = 479px
 
 MAX-WIDTH AND MIN-WIDTH
 61.9375em = 991px (max) AND 48em = 768px (min)
@@ -47,8 +50,13 @@ MAX-WIDTH AND MIN-WIDTH
       @content;
     }
   }
-  @if $breakpoint == mobile {
+  @if $breakpoint == big-mobile {
     @media only screen and (max-width: 37.4375em) {
+      @content;
+    }
+  }
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 29.9375em) {
       @content;
     }
   }
