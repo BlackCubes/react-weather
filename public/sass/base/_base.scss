@@ -50,6 +50,10 @@ body {
   @include respond(port-991x-768n) {
     min-height: 100vh;
   }
+
+  @include respond(tab-port) {
+    min-height: 100vh;
+  }
 }
 
 ::selection {
