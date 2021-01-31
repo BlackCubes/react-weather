@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { showAlert } from './alert';
 
 // API
 export const getCoordinates = async (location) => {
@@ -9,7 +8,6 @@ export const getCoordinates = async (location) => {
     if (res.status === 200) return res.data.results[0].locations[0].latLng;
   } catch (err) {
     console.log(err);
-    // showAlert('error', 'There was an error getting the coordinates.');
   }
 };
 
@@ -20,7 +18,6 @@ export const getLocation = async (lat, lon) => {
     if (res.status === 200) return res.data.results[0].locations[0].adminArea5;
   } catch (err) {
     console.log(err);
-    // showAlert('error', 'There was an error getting the location.');
   }
 };
 
@@ -31,7 +28,6 @@ export const getWeatherData = async (lat, lon) => {
     if (res.status === 200) return res.data;
   } catch (err) {
     console.log(err);
-    // showAlert('error', 'There was an error getting the weather.');
   }
 };
 
